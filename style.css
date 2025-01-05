@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
-@keyframes colorChange {
-    0% { background-color: #4B0082; }  /* Indigo */
-    33% { background-color: #8A2BE2; } /* Purple */
-    66% { background-color: #9400D3; } /* Dark Violet */
-    100% { background-color: #4B0082; } /* Back to Indigo */
-}
-
 :root {
     --primary-color: #8A2BE2;
     --secondary-color: #4B0082;
@@ -221,7 +214,33 @@ h2 {
 }
 
 .experience-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.experience-item .position {
+    font-style: italic;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.experience-item a {
     color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.experience-item a:hover {
+    color: var(--accent-color);
+}
+
+.experience-item h3 {
+    color: var(--primary-color);
+}
+
+.experience-item .company {
+    font-weight: bold;
+    color: var(--accent-color);
 }
 
 .experience-item .date {
