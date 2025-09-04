@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* AOS (Animate On Scroll) CSS */
+@import 'aos/dist/aos.css';
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   
   body {
-    @apply bg-slate-900 text-white;
+    background-color: #111827;
+    color: white;
   }
 }
 
@@ -46,7 +50,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-slate-800;
+  background-color: #1f2937;
 }
 
 ::-webkit-scrollbar-thumb {
