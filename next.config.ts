@@ -5,7 +5,10 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true
-  }
+  },
+  distDir: 'out',
+  skipTrailingSlashRedirect: true,
+  skipMiddlewareUrlNormalize: true
 };
 
 export default nextConfig;
