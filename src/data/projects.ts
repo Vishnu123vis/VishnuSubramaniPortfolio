@@ -19,8 +19,7 @@ export const projects: Project[] = [
       "Real-time swipe matching with FastAPI + MongoDB",
       "AI-driven profile matching"
     ],
-    github: "https://github.com/Vishnu123vis/Findr",
-    live: "https://findr-demo.vercel.app"
+    github: "https://github.com/Vishnu123vis/Findr"
   },
   {
     title: "Serverless E-commerce App",
@@ -32,8 +31,7 @@ export const projects: Project[] = [
       "Single-table DynamoDB schema with GSIs",
       "Cognito-secured APIs, SES order emails"
     ],
-    github: "https://github.com/Vishnu123vis/serverless-ecommerce",
-    live: "https://ecommerce-demo.vercel.app"
+    github: "https://github.com/Vishnu123vis/serverless-ecommerce-platform"
   },
   {
     title: "Spotify Playlist Genre Analyzer",
@@ -45,7 +43,6 @@ export const projects: Project[] = [
       "Visualizations with Chart.js",
       "Automated fetching with Axios (manual effort -80%)"
     ],
-    github: "https://github.com/Vishnu123vis/spotify-genre-analyzer",
-    live: "https://spotify-analyzer.vercel.app"
+    github: "https://github.com/Vishnu123vis/spotify-genre-analyzer"
   }
 ];
