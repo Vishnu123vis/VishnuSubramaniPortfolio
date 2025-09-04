@@ -19,7 +19,7 @@ export const projects: Project[] = [
       "Real-time swipe matching with FastAPI + MongoDB",
       "AI-driven profile matching"
     ],
-    github: "https://github.com/Vishnu123vis/findr",
+    github: "https://github.com/Vishnu123vis/Findr",
     live: "https://findr-demo.vercel.app"
   },
   {
@@ -45,7 +45,7 @@ export const projects: Project[] = [
       "Visualizations with Chart.js",
       "Automated fetching with Axios (manual effort -80%)"
     ],
-    github: "https://github.com/Vishnu123vis/spotify-analyzer",
+    github: "https://github.com/Vishnu123vis/spotify-genre-analyzer",
     live: "https://spotify-analyzer.vercel.app"
   }
 ];

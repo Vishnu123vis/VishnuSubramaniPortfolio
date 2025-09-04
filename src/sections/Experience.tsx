@@ -94,12 +94,31 @@ const Experience = () => {
                         <p className="text-xl font-semibold text-purple-100">{exp.company}</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-purple-100">
+                    <div className="flex items-center gap-2 text-purple-100 mb-2">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                       </svg>
                       <span className="font-medium">{exp.period}</span>
                     </div>
+                    {exp.website && (
+                      <div className="flex items-center gap-2 text-purple-100">
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
+                        </svg>
+                        {exp.website.startsWith('http') ? (
+                          <a 
+                            href={exp.website} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="font-medium hover:text-white transition-colors duration-200 underline"
+                          >
+                            Visit Website
+                          </a>
+                        ) : (
+                          <span className="font-medium">{exp.website}</span>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
 

@@ -4,6 +4,7 @@ export interface Experience {
   period: string;
   achievements: string[];
   technologies?: string[];
+  website?: string;
 }
 
 export const experiences: Experience[] = [
@@ -29,7 +30,8 @@ export const experiences: Experience[] = [
       "Clerk auth with Google + Discord (support requests -30%)",
       "Figma collaboration for UI"
     ],
-    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Clerk"]
+    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Clerk"],
+    website: "Website in progress"
   },
   {
     title: "Software Developer",
@@ -42,7 +44,8 @@ export const experiences: Experience[] = [
       "Dashboards with Recharts",
       "Stripe API for payments"
     ],
-    technologies: ["TypeScript", "AWS Lambda", "DynamoDB", "Recharts", "Stripe"]
+    technologies: ["TypeScript", "AWS Lambda", "DynamoDB", "Recharts", "Stripe"],
+    website: "https://pmbees.com/"
   },
   {
     title: "Lead Programming Instructor",
