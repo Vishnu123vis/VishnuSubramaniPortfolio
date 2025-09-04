@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import ParticleBackground from '../components/ParticleBackground';
 import { personalInfo } from '../data/links';
 
@@ -43,7 +43,7 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300">
-              Management Engineering Student
+              University of Waterloo Engineering Student
             </p>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto">
               Passionate about creating solutions at the intersection of people and technology. 
@@ -87,17 +87,6 @@ const Hero = () => {
             >
               <FaEnvelope className="w-5 h-5" />
               Email
-            </motion.a>
-            
-            <motion.a
-              href={personalInfo.resume}
-              download
-              className="flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors duration-200"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaDownload className="w-5 h-5" />
-              Resume
             </motion.a>
           </motion.div>
         </motion.div>
