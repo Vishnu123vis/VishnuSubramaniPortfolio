@@ -134,12 +134,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 36px;
-    width: 36px;
+    height: 40px;
+    width: 40px;
     border: 1px solid var(--line);
     background-color: var(--bg);
     color: var(--muted);
-    border-radius: 9px;
+    border-radius: 10px;
     transition:
       color 0.2s ease,
       background-color 0.2s ease,
@@ -182,10 +182,10 @@
   }
 
   .section-title {
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
+    margin-bottom: 1.75rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
     color: var(--fg);
   }
 }
