@@ -29,68 +29,55 @@ function ExternalLink({
   );
 }
 
+const SECTION_HEAD =
+  "mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-soft";
+
 export default function Home() {
   return (
-    <div className="min-h-screen px-7 pb-36 pt-16 sm:px-12 sm:pb-44 sm:pt-24">
-      <div className="fixed right-5 top-5 z-40 sm:right-8 sm:top-8">
+    <div className="min-h-svh px-6 py-7 sm:px-10 sm:py-9 md:h-svh md:overflow-hidden lg:py-10">
+      <div className="fixed right-5 top-5 z-40 sm:right-7 sm:top-7">
         <ThemeToggle />
       </div>
 
-      <article className="animate-enter mx-auto max-w-[44rem] text-pretty">
-        <section aria-label="Introduction">
-          <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
-            <div className="order-2 min-w-0 flex-1 space-y-7 sm:order-1">
-              <p className="text-fg text-[2.15rem] font-medium leading-tight tracking-tight sm:text-[2.45rem]">
-                hey, I&apos;m vishnu
-              </p>
-              <div className="text-body space-y-5 text-[18px] leading-relaxed">
-                <p>
-                  management engineering @{" "}
-                  <ExternalLink href={UW}>university of waterloo</ExternalLink>
-                  <span className="text-muted">
-                    {" · "}
-                    {education.gpa}
-                    {" · "}
-                    {education.graduationYear.toLowerCase()}
-                  </span>
-                </p>
-                <p>
-                  currently looking for a{" "}
-                  <span className="text-fg">fall &apos;26 swe internship</span>
-                  {" — "}backend, cloud, or applied ai.
-                </p>
-                <p>
-                  winter &apos;26 @{" "}
-                  <ExternalLink href="https://www.sunlife.com/">
-                    sun life
-                  </ExternalLink>
-                  {" — "}rag + bedrock validation, lambda services, openshift,
-                  and a backstage plugin.
-                </p>
-                <p className="text-muted">
-                  interested in dependable backends, applied ai, and interfaces
-                  that stay out of the way.
-                </p>
-              </div>
-            </div>
-            <Image
-              src="/signature.png"
-              alt=""
-              width={1024}
-              height={903}
-              className="order-1 h-auto w-[7rem] shrink-0 object-contain object-left dark:invert sm:order-2 sm:mt-1 sm:w-[9rem]"
-              priority
-            />
+      <article className="animate-enter mx-auto flex h-full w-full max-w-6xl flex-col gap-7 lg:gap-9">
+        <header className="flex items-start gap-5 sm:gap-8">
+          <Image
+            src="/signature.png"
+            alt=""
+            width={1024}
+            height={903}
+            className="h-auto w-[3.25rem] shrink-0 object-contain object-left dark:invert sm:w-[4rem] lg:w-[4.5rem]"
+            priority
+          />
+          <div className="min-w-0 flex-1 space-y-1.5">
+            <p className="text-fg text-[1.45rem] font-medium leading-tight tracking-tight sm:text-[1.7rem] lg:text-[1.95rem]">
+              hey, I&apos;m vishnu
+            </p>
+            <p className="text-body text-[13.5px] leading-relaxed sm:text-[14.5px]">
+              management engineering @{" "}
+              <ExternalLink href={UW}>university of waterloo</ExternalLink>
+              <span className="text-muted">
+                {" · "}
+                {education.gpa}
+                {" · "}
+                {education.graduationYear.toLowerCase()}
+              </span>
+            </p>
+            <p className="text-body text-[13.5px] leading-relaxed sm:text-[14.5px]">
+              currently looking for a{" "}
+              <span className="text-fg">fall &apos;26 swe internship</span>
+              {" — "}backend, cloud, or applied ai.
+            </p>
           </div>
-        </section>
+        </header>
 
-        <section id="built" className="section">
-          <h3 className="section-title">what i&apos;ve built</h3>
-          <ul className="list-arrow text-body space-y-5 text-[18px] leading-snug">
-            {projects.map((p) => (
-              <li key={p.title} className="min-w-0">
-                <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-1.5">
-                  <span className="inline-flex flex-wrap items-baseline gap-x-1.5">
+        <main className="grid min-h-0 flex-1 grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-x-8 lg:gap-x-12">
+          <section className="min-w-0">
+            <h3 className={SECTION_HEAD}>what i&apos;ve built</h3>
+            <ul className="list-arrow text-body space-y-3.5 text-[13.5px] leading-snug sm:text-[14px]">
+              {projects.map((p) => (
+                <li key={p.title} className="min-w-0">
+                  <div className="flex flex-wrap items-baseline gap-x-1.5">
                     <span className="text-soft" aria-hidden>
                       ↳
                     </span>
@@ -101,23 +88,21 @@ export default function Home() {
                     ) : (
                       <span className="text-fg">{p.title.toLowerCase()}</span>
                     )}
-                  </span>
-                  <span className="text-muted break-words">
-                    — {p.tagline}
-                  </span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </section>
+                  </div>
+                  <p className="text-muted ml-4 mt-0.5 text-[12.5px] leading-snug">
+                    {p.tagline}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
 
-        <section id="previously" className="section">
-          <h3 className="section-title">previously</h3>
-          <ul className="text-body space-y-6 text-[18px] leading-snug">
-            {experiences.map((exp) => (
-              <li key={`${exp.company}-${exp.period}`} className="min-w-0">
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                  <div className="min-w-0 flex flex-wrap items-baseline gap-x-1.5">
+          <section className="border-line-soft min-w-0 md:border-l md:pl-8 lg:pl-12">
+            <h3 className={SECTION_HEAD}>previously</h3>
+            <ul className="text-body space-y-3.5 text-[13.5px] leading-snug sm:text-[14px]">
+              {experiences.map((exp) => (
+                <li key={`${exp.company}-${exp.period}`} className="min-w-0">
+                  <div className="flex flex-wrap items-baseline gap-x-1.5">
                     <span className="text-soft" aria-hidden>
                       ↳
                     </span>
@@ -131,41 +116,42 @@ export default function Home() {
                       <span>{exp.company.toLowerCase()}</span>
                     )}
                   </div>
-                  <span className="text-muted shrink-0 text-[14px] tabular-nums sm:text-[15.5px]">
+                  <p className="text-muted ml-4 mt-0.5 text-[12.5px] tabular-nums">
                     {exp.period.toLowerCase()}
-                  </span>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="border-line-soft min-w-0 md:border-l md:pl-8 lg:pl-12">
+            <h3 className={SECTION_HEAD}>stack</h3>
+            <dl className="text-body space-y-2.5 text-[13px] leading-relaxed sm:text-[13.5px]">
+              {(
+                [
+                  ["lang", skills.languages],
+                  ["fwk", skills.frameworks],
+                  ["data", skills.databases],
+                  ["cloud", skills.cloud],
+                  ["tools", skills.tools],
+                ] as const
+              ).map(([label, items]) => (
+                <div
+                  key={label}
+                  className="grid grid-cols-[3.25rem_1fr] gap-x-3"
+                >
+                  <dt className="text-soft pt-[1px] text-[10.5px] font-semibold uppercase tracking-[0.16em]">
+                    {label}
+                  </dt>
+                  <dd className="break-words">{items.join(", ")}</dd>
                 </div>
-              </li>
-            ))}
-          </ul>
-        </section>
+              ))}
+            </dl>
+          </section>
+        </main>
 
-        <section id="stack" className="section">
-          <h3 className="section-title">stack</h3>
-          <dl className="text-body space-y-5 text-[18px] leading-relaxed">
-            {(
-              [
-                ["languages", skills.languages],
-                ["frameworks", skills.frameworks],
-                ["data", skills.databases],
-                ["cloud", skills.cloud],
-                ["tools", skills.tools],
-              ] as const
-            ).map(([label, items]) => (
-              <div
-                key={label}
-                className="grid grid-cols-1 gap-x-6 sm:grid-cols-[7.5rem_1fr]"
-              >
-                <dt className="text-muted">{label}</dt>
-                <dd className="break-words">{items.join(", ")}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-
-        <section id="contact" className="section">
-          <h3 className="section-title">say hi</h3>
-          <p className="text-body text-[18px] leading-relaxed">
+        <footer className="border-line-soft flex flex-col gap-3 border-t pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-5">
+          <p className="text-body text-[13px] leading-relaxed sm:text-[13.5px]">
             <a
               href={`mailto:${personalInfo.email}`}
               className="link-quiet text-fg font-medium"
@@ -182,13 +168,12 @@ export default function Home() {
             <span className="text-soft"> · </span>
             waterloo, on
           </p>
-        </section>
-
-        <footer className="border-line-soft mt-20 border-t pt-12 sm:mt-24 sm:pt-14">
-          <SocialLinks />
-          <p className="text-soft mt-9 text-[13.5px]">
-            © {new Date().getFullYear()} {personalInfo.name.toLowerCase()}
-          </p>
+          <div className="flex items-center justify-between gap-4 sm:gap-5">
+            <SocialLinks />
+            <span className="text-soft hidden text-[12px] sm:inline">
+              © {new Date().getFullYear()} {personalInfo.name.toLowerCase()}
+            </span>
+          </div>
         </footer>
       </article>
     </div>
