@@ -21,7 +21,7 @@ export default function SocialLinks() {
   const links = getSocialLinks();
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+    <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
       {links.map((link) => {
         const Icon = iconMap[link.icon];
         const isResume = link.icon === "resume";
@@ -30,7 +30,7 @@ export default function SocialLinks() {
             key={`${link.icon}-${link.url}`}
             href={link.url}
             aria-label={link.name}
-            className="text-stone-500 transition-colors hover:text-stone-900"
+            className="text-neutral-400 transition-colors hover:text-neutral-900"
             {...(isResume
               ? { download: true }
               : { target: "_blank", rel: "noopener noreferrer" })}

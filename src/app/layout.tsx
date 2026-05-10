@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Lexend } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
-const lexend = Lexend({
+const ibm = IBM_Plex_Sans({
+  weight: ["400", "500", "600"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-lexend",
+  variable: "--font-ibm",
 });
 
 export const metadata: Metadata = {
@@ -35,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lexend.variable} scroll-smooth`}>
-      <body className={`${lexend.className} min-h-screen`}>{children}</body>
+    <html lang="en" className={`${ibm.variable} scroll-smooth`}>
+      <body className={`${ibm.className} min-h-screen`}>{children}</body>
     </html>
   );
 }

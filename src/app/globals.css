@@ -6,10 +6,51 @@
   }
 
   body {
-    @apply bg-stone-50 text-stone-900 antialiased;
+    @apply bg-white text-neutral-900 antialiased;
   }
 
   ::selection {
-    @apply bg-stone-200 text-stone-900;
+    @apply bg-neutral-200 text-neutral-900;
+  }
+
+  details > summary {
+    list-style: none;
+  }
+
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .link-quiet {
+    @apply underline decoration-neutral-400 underline-offset-[3px] transition-colors hover:decoration-neutral-900 hover:text-neutral-950;
+  }
+
+  .list-arrow > li {
+    @apply border-l border-transparent pl-0 transition-[padding,border-color] duration-200;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .list-arrow > li:hover {
+      @apply border-neutral-200 pl-1;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-enter {
+    animation: fade-up 0.55s ease backwards;
   }
 }

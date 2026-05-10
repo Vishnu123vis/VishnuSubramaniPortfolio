@@ -1,19 +1,24 @@
 export interface Experience {
   title: string;
+  /** Short role label for the compact ↳ list */
+  roleShort: string;
   company: string;
   location?: string;
   period: string;
   achievements: string[];
   technologies?: string[];
   website?: string;
+  companyUrl?: string;
 }
 
 export const experiences: Experience[] = [
   {
     title: "AI Software Engineer / Solutions Architect",
+    roleShort: "ai software engineer intern",
     company: "Sun Life Financial",
     location: "Toronto, ON",
     period: "January 2026 – April 2026",
+    companyUrl: "https://www.sunlife.com/",
     achievements: [
       "Engineered a RAG pipeline using Amazon Bedrock, Titan V2, and pgvector on RDS PostgreSQL for policy validation.",
       "Built a concurrent AWS Lambda backend in Python with multi-threaded processing, reducing validation time by 70%.",
@@ -34,9 +39,11 @@ export const experiences: Experience[] = [
   },
   {
     title: "Backend Developer Intern",
+    roleShort: "backend developer intern",
     company: "Serverless Guru",
     location: "Remote · Wilmington, DE",
     period: "May 2025 – August 2025",
+    companyUrl: "https://serverlessguru.com/",
     achievements: [
       "Architected and built a scalable backend with AWS Lambda, API Gateway, and DynamoDB, achieving 99.9% uptime.",
       "Improved filtering with DynamoDB overloaded sort keys, cutting query costs by 35% and boosting speed by 60%.",
@@ -52,9 +59,11 @@ export const experiences: Experience[] = [
   },
   {
     title: "Software Engineer",
+    roleShort: "software engineer",
     company: "TEDxUW",
     location: "Waterloo, ON",
     period: "April 2025 – Present",
+    companyUrl: "https://www.linkedin.com/company/tedxuw/",
     achievements: [
       "Built speaker and ticket sales dashboard with Next.js, React, and TypeScript for a responsive, high-traffic-ready UI.",
       "Designed user profile schema with Prisma and Neon PostgreSQL for attendee and sponsor preferences.",
@@ -65,9 +74,11 @@ export const experiences: Experience[] = [
   },
   {
     title: "Software Developer",
+    roleShort: "software developer intern",
     company: "MarTechBees",
     location: "Toronto, ON",
     period: "May 2024 – August 2024",
+    companyUrl: "https://pmbees.com/",
     achievements: [
       "Built a serverless web app for property managers using AWS, reducing workload and cutting costs by 25%.",
       "Developed Lambda + API Gateway backends in TypeScript with full CRUD on DynamoDB (manual entry −80%).",

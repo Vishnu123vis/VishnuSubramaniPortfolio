@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import SocialLinks from "@/components/SocialLinks";
 import { education } from "@/data/education";
 import { experiences } from "@/data/experience";
@@ -7,257 +6,202 @@ import { personalInfo } from "@/data/links";
 import { projects } from "@/data/projects";
 import { skills } from "@/data/skills";
 
-const nav = [
-  { label: "About", href: "#about" },
-  { label: "Education", href: "#education" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-];
+const UW = "https://uwaterloo.ca/";
+
+function ExternalLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="link-quiet"
+    >
+      {children}
+    </a>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="mx-auto flex min-h-screen max-w-2xl flex-col px-6 pb-16 pt-10 sm:px-8 sm:pb-20 sm:pt-14">
-      <header className="mb-14 flex flex-col gap-6 border-b border-stone-200 pb-8 sm:mb-16 sm:flex-row sm:items-center sm:justify-between">
-        <Link
-          href="#"
-          className="text-sm font-medium tracking-tight text-stone-900"
+    <div className="min-h-screen px-6 pb-24 pt-14 sm:px-8 sm:pt-20">
+      <article className="animate-enter mx-auto max-w-xl">
+        <Image
+          src="/signature.png"
+          alt=""
+          width={1024}
+          height={903}
+          className="h-auto w-[min(13.5rem,88vw)] object-contain object-left"
+          priority
+        />
+
+        <p className="mt-10 text-[1.35rem] font-medium leading-snug tracking-tight text-neutral-900">
+          hey, I&apos;m vishnu
+        </p>
+
+        <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-neutral-700">
+          <p>
+            management engineering @{" "}
+            <ExternalLink href={UW}>university of waterloo</ExternalLink>
+            <span className="text-neutral-500">
+              {" "}
+              · {education.gpa} · {education.graduationYear.toLowerCase()}
+            </span>
+          </p>
+          <p>
+            currently @{" "}
+            <ExternalLink href="https://www.linkedin.com/company/tedxuw/">
+              tedxuw
+            </ExternalLink>
+            , shipping speaker &amp; ticket tooling with next.js, prisma, and
+            clerk.
+          </p>
+          <p>
+            winter &apos;26 @{" "}
+            <ExternalLink href="https://www.sunlife.com/">sun life</ExternalLink>
+            — rag + bedrock validation, lambda services, openshift, and a
+            backstage plugin.
+          </p>
+          <p className="text-neutral-600">
+            interested in dependable backends, applied ai, and interfaces that
+            stay out of the way.
+          </p>
+        </div>
+
+        <h3
+          id="built"
+          className="mb-3 mt-14 scroll-mt-24 text-base font-semibold text-neutral-900"
         >
-          {personalInfo.name.split(" ")[0]} Subramani
-        </Link>
-        <nav
-          className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-stone-600"
-          aria-label="Page sections"
-        >
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="transition-colors hover:text-stone-900"
-            >
-              {item.label}
-            </a>
+          what i&apos;ve built
+        </h3>
+        <ul className="list-arrow space-y-2.5 text-[15px] leading-snug text-neutral-800">
+          {projects.map((p) => (
+            <li key={p.title} className="flex flex-wrap items-baseline gap-x-1">
+              <span className="text-neutral-400" aria-hidden>
+                ↳
+              </span>
+              {p.github ? (
+                <ExternalLink href={p.github}>{p.title.toLowerCase()}</ExternalLink>
+              ) : (
+                <span>{p.title.toLowerCase()}</span>
+              )}
+              <span className="text-neutral-500">— {p.tagline}</span>
+            </li>
           ))}
-        </nav>
-      </header>
+        </ul>
 
-      <main className="flex flex-1 flex-col gap-20 sm:gap-24">
-        <section className="flex flex-col items-center text-center" aria-label="Introduction">
-          <Image
-            src="/signature.png"
-            alt="Signature"
-            width={280}
-            height={96}
-            className="mb-8 h-auto w-48 object-contain sm:w-56"
-            priority
-          />
-          <p className="mb-2 text-xs font-medium uppercase tracking-[0.22em] text-stone-500">
-            Management Engineering
-          </p>
-          <h1 className="mb-4 text-3xl font-medium tracking-tight text-stone-900 sm:text-4xl">
-            {personalInfo.name}
-          </h1>
-          <p className="max-w-md text-base leading-relaxed text-stone-600">
-            I build reliable software and cloud systems—backend, data, and
-            product-facing tools—with a focus on clarity and maintainability.
-          </p>
-        </section>
-
-        <section id="about" className="scroll-mt-28">
-          <h2 className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-stone-500">
-            About
-          </h2>
-          <div className="space-y-4 text-[15px] leading-relaxed text-stone-700">
-            <p>
-              I&apos;m studying{" "}
-              <span className="text-stone-900">{education.degree}</span> at the{" "}
-              {education.school}, with coursework and projects spanning
-              full-stack development, cloud architecture, and analytics.
-            </p>
-            <p>
-              Most recently I&apos;ve worked on AI validation pipelines,
-              serverless backends, and event-tech platforms—always aiming for
-              systems that are straightforward to operate and easy for others to
-              extend.
-            </p>
-          </div>
-        </section>
-
-        <section id="education" className="scroll-mt-28">
-          <h2 className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-stone-500">
-            Education
-          </h2>
-          <div className="border-l-2 border-stone-200 pl-5">
-            <p className="font-medium text-stone-900">{education.degree}</p>
-            <p className="mt-1 text-sm text-stone-600">{education.school}</p>
-            <p className="mt-2 text-sm text-stone-600">
-              {education.graduationYear} · GPA {education.gpa}
-            </p>
-            <ul className="mt-4 space-y-1.5 text-sm text-stone-600">
-              {education.awards.map((award) => (
-                <li key={award}>{award}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section id="experience" className="scroll-mt-28">
-          <h2 className="mb-8 text-xs font-medium uppercase tracking-[0.2em] text-stone-500">
-            Experience
-          </h2>
-          <ul className="space-y-12">
-            {experiences.map((exp) => (
-              <li key={`${exp.company}-${exp.period}`}>
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                  <div>
-                    <p className="font-medium text-stone-900">{exp.title}</p>
-                    <p className="text-sm text-stone-700">
-                      {exp.company}
-                      {exp.location ? ` · ${exp.location}` : ""}
-                    </p>
-                  </div>
-                  <p className="shrink-0 text-sm tabular-nums text-stone-500">
-                    {exp.period}
-                  </p>
-                </div>
-                {exp.website && (
-                  <p className="mt-1 text-sm">
-                    {exp.website.startsWith("http") ? (
-                      <a
-                        href={exp.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-stone-600 underline decoration-stone-300 underline-offset-4 transition-colors hover:text-stone-900"
-                      >
-                        {exp.website.replace(/^https?:\/\//, "")}
-                      </a>
-                    ) : (
-                      <span className="text-stone-600">{exp.website}</span>
-                    )}
-                  </p>
+        <h3
+          id="previously"
+          className="mb-3 mt-14 scroll-mt-24 text-base font-semibold text-neutral-900"
+        >
+          previously
+        </h3>
+        <ul className="space-y-4 text-[15px] leading-snug text-neutral-800">
+          {experiences.map((exp) => (
+            <li key={`${exp.company}-${exp.period}`}>
+              <div className="flex flex-wrap items-baseline gap-x-1">
+                <span className="text-neutral-400" aria-hidden>
+                  ↳
+                </span>
+                <span>{exp.roleShort}</span>
+                <span className="text-neutral-500">@</span>
+                {exp.companyUrl ? (
+                  <ExternalLink href={exp.companyUrl}>
+                    {exp.company.toLowerCase()}
+                  </ExternalLink>
+                ) : (
+                  <span>{exp.company.toLowerCase()}</span>
                 )}
-                <ul className="mt-4 list-inside list-disc space-y-2 text-[15px] leading-relaxed text-stone-700 marker:text-stone-400">
+                <span className="text-neutral-400">
+                  · {exp.period.toLowerCase()}
+                </span>
+              </div>
+              {exp.website && !exp.companyUrl && (
+                <p className="ml-4 mt-0.5 text-sm">
+                  <ExternalLink href={exp.website}>
+                    {exp.website.replace(/^https?:\/\//, "")}
+                  </ExternalLink>
+                </p>
+              )}
+              <details className="ml-4 mt-1.5 border-l border-neutral-200 pl-3">
+                <summary className="cursor-pointer select-none text-sm text-neutral-500 hover:text-neutral-800">
+                  highlights
+                </summary>
+                <ul className="mt-2 space-y-1.5 text-[14px] leading-relaxed text-neutral-700">
                   {exp.achievements.map((line) => (
-                    <li key={line} className="pl-1">
-                      <span className="-ml-1">{line}</span>
-                    </li>
+                    <li key={line}>{line}</li>
                   ))}
                 </ul>
                 {exp.technologies && exp.technologies.length > 0 && (
-                  <p className="mt-4 text-sm leading-snug text-stone-500">
+                  <p className="mt-2 text-[13px] leading-snug text-neutral-500">
                     {exp.technologies.join(" · ")}
                   </p>
                 )}
-              </li>
-            ))}
-          </ul>
-        </section>
+              </details>
+            </li>
+          ))}
+        </ul>
 
-        <section id="projects" className="scroll-mt-28">
-          <h2 className="mb-8 text-xs font-medium uppercase tracking-[0.2em] text-stone-500">
-            Projects
-          </h2>
-          <ul className="space-y-10">
-            {projects.map((project) => (
-              <li key={project.title}>
-                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                  <p className="font-medium text-stone-900">{project.title}</p>
-                  <p className="text-sm tabular-nums text-stone-500">
-                    {project.period}
-                  </p>
-                </div>
-                <p className="mt-2 text-[15px] leading-relaxed text-stone-700">
-                  {project.description}
-                </p>
-                <p className="mt-3 text-sm text-stone-500">
-                  {project.technologies.join(" · ")}
-                </p>
-                {project.github && (
-                  <p className="mt-2 text-sm">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-stone-700 underline decoration-stone-300 underline-offset-4 transition-colors hover:text-stone-900"
-                    >
-                      Code on GitHub
-                    </a>
-                  </p>
-                )}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section id="skills" className="scroll-mt-28">
-          <h2 className="mb-8 text-xs font-medium uppercase tracking-[0.2em] text-stone-500">
-            Technical skills
-          </h2>
-          <dl className="space-y-6 text-[15px] leading-relaxed text-stone-700">
-            <div>
-              <dt className="mb-1 text-sm font-medium text-stone-900">
-                Languages
-              </dt>
-              <dd>{skills.languages.join(", ")}</dd>
-            </div>
-            <div>
-              <dt className="mb-1 text-sm font-medium text-stone-900">
-                Frameworks & libraries
-              </dt>
-              <dd>{skills.frameworks.join(", ")}</dd>
-            </div>
-            <div>
-              <dt className="mb-1 text-sm font-medium text-stone-900">
-                Databases
-              </dt>
-              <dd>{skills.databases.join(", ")}</dd>
-            </div>
-            <div>
-              <dt className="mb-1 text-sm font-medium text-stone-900">
-                Cloud & infrastructure
-              </dt>
-              <dd>{skills.cloud.join(", ")}</dd>
-            </div>
-            <div>
-              <dt className="mb-1 text-sm font-medium text-stone-900">
-                Tools & platforms
-              </dt>
-              <dd>{skills.tools.join(", ")}</dd>
-            </div>
-          </dl>
-        </section>
-
-        <section id="contact" className="scroll-mt-28">
-          <h2 className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-stone-500">
-            Contact
-          </h2>
-          <p className="text-[15px] leading-relaxed text-stone-700">
-            <a
-              href={`mailto:${personalInfo.email}`}
-              className="text-stone-900 underline decoration-stone-300 underline-offset-4 transition-colors hover:decoration-stone-500"
-            >
-              {personalInfo.email}
-            </a>
-            <span className="text-stone-400"> · </span>
-            <a
-              href={`tel:${personalInfo.phone.replace(/\D/g, "")}`}
-              className="text-stone-900 underline decoration-stone-300 underline-offset-4 transition-colors hover:decoration-stone-500"
-            >
-              {personalInfo.phone}
-            </a>
-            <span className="text-stone-400"> · </span>
-            Waterloo, ON
+        <h3
+          id="stack"
+          className="mb-3 mt-14 scroll-mt-24 text-base font-semibold text-neutral-900"
+        >
+          stack
+        </h3>
+        <div className="space-y-3 text-[15px] leading-relaxed text-neutral-700">
+          <p>
+            <span className="text-neutral-500">languages — </span>
+            {skills.languages.join(", ")}
           </p>
-        </section>
-      </main>
+          <p>
+            <span className="text-neutral-500">frameworks — </span>
+            {skills.frameworks.join(", ")}
+          </p>
+          <p>
+            <span className="text-neutral-500">data — </span>
+            {skills.databases.join(", ")}
+          </p>
+          <p>
+            <span className="text-neutral-500">cloud — </span>
+            {skills.cloud.join(", ")}
+          </p>
+          <p>
+            <span className="text-neutral-500">tools — </span>
+            {skills.tools.join(", ")}
+          </p>
+        </div>
 
-      <footer className="mt-24 border-t border-stone-200 pt-10">
-        <SocialLinks />
-        <p className="mt-8 text-center text-xs text-stone-500">
-          © {new Date().getFullYear()} {personalInfo.name}
+        <p className="mt-14 text-[15px] text-neutral-700">
+          say hi —{" "}
+          <a
+            href={`mailto:${personalInfo.email}`}
+            className="link-quiet font-medium"
+          >
+            {personalInfo.email}
+          </a>
+          <span className="text-neutral-400"> · </span>
+          <a
+            href={`tel:${personalInfo.phone.replace(/\D/g, "")}`}
+            className="link-quiet"
+          >
+            {personalInfo.phone}
+          </a>
+          <span className="text-neutral-400"> · </span>
+          waterloo, on
         </p>
-      </footer>
+
+        <footer className="mt-12 border-t border-neutral-200 pt-8">
+          <SocialLinks />
+          <p className="mt-6 text-xs text-neutral-400">
+            © {new Date().getFullYear()} {personalInfo.name.toLowerCase()}
+          </p>
+        </footer>
+      </article>
     </div>
   );
 }
