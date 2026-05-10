@@ -1,24 +1,59 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --fg: #171717;
+  --body: #404040;
+  --muted: #737373;
+  --soft: #a3a3a3;
+  --line: #e5e5e5;
+  --line-soft: #efefef;
+  --cursor-ring: rgba(23, 23, 23, 0.22);
+}
+
+.dark {
+  --bg: #0b0b0c;
+  --fg: #f5f5f5;
+  --body: #d4d4d4;
+  --muted: #a3a3a3;
+  --soft: #6b6b6b;
+  --line: #262626;
+  --line-soft: #1d1d1f;
+  --cursor-ring: rgba(245, 245, 245, 0.32);
+}
+
 @layer base {
   html {
+    color-scheme: light;
     scroll-behavior: smooth;
   }
 
-  body {
-    @apply bg-white text-neutral-900 antialiased;
+  html.dark {
+    color-scheme: dark;
   }
 
-  /* Custom cursor (SmoothCursor): hide default on fine pointers only */
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+    @apply antialiased;
+  }
+
+  ::selection {
+    background-color: var(--line);
+    color: var(--fg);
+  }
+
+  /* Hide native cursor only on fine pointers when SmoothCursor is active */
   @media (pointer: fine) {
     html.cursor-custom-on,
     html.cursor-custom-on * {
       cursor: none !important;
     }
-  }
-
-  ::selection {
-    @apply bg-neutral-200 text-neutral-900;
   }
 
   details > summary {
@@ -31,26 +66,127 @@
 }
 
 @layer utilities {
+  .text-fg {
+    color: var(--fg);
+  }
+  .text-body {
+    color: var(--body);
+  }
+  .text-muted {
+    color: var(--muted);
+  }
+  .text-soft {
+    color: var(--soft);
+  }
+  .bg-surface {
+    background-color: var(--bg);
+  }
+  .border-line {
+    border-color: var(--line);
+  }
+  .border-line-soft {
+    border-color: var(--line-soft);
+  }
+  .divide-line-soft > * + * {
+    border-top: 1px solid var(--line-soft);
+  }
+
   .link-quiet {
-    @apply rounded-sm underline decoration-neutral-400 underline-offset-[3px] transition-colors hover:decoration-neutral-900 hover:text-neutral-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900;
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--soft);
+    text-underline-offset: 3px;
+    border-radius: 2px;
+    transition:
+      color 0.2s ease,
+      text-decoration-color 0.2s ease;
+  }
+  .link-quiet:hover {
+    color: var(--fg);
+    text-decoration-color: var(--fg);
+  }
+  .link-quiet:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 2px;
   }
 
   .icon-link {
-    @apply rounded-md p-1 text-neutral-400 transition-colors hover:text-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--soft);
+    border-radius: 6px;
+    padding: 4px;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+  .icon-link:hover {
+    color: var(--fg);
+  }
+  .icon-link:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 2px;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+    width: 32px;
+    border: 1px solid var(--line);
+    background-color: var(--bg);
+    color: var(--muted);
+    border-radius: 8px;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+  .chip:hover {
+    color: var(--fg);
+    border-color: var(--fg);
+  }
+  .chip:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 2px;
   }
 
   .list-arrow > li {
-    @apply border-l border-transparent pl-0 transition-[padding,border-color] duration-200;
+    border-left: 1px solid transparent;
+    padding-left: 0;
+    transition:
+      padding 0.2s ease,
+      border-color 0.2s ease;
   }
-
   @media (hover: hover) and (pointer: fine) {
     .list-arrow > li:hover {
-      @apply border-neutral-200 pl-1;
+      border-color: var(--line);
+      padding-left: 4px;
+    }
+  }
+
+  .section {
+    margin-top: 3rem;
+    padding-top: 2.25rem;
+    border-top: 1px solid var(--line-soft);
+    scroll-margin-top: 7rem;
+  }
+  @media (min-width: 640px) {
+    .section {
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
     }
   }
 
   .section-title {
-    @apply mb-4 mt-14 scroll-mt-28 text-base font-semibold tracking-tight text-neutral-900 sm:mt-16;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--fg);
   }
 }
 

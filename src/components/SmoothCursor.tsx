@@ -8,6 +8,7 @@ function lerp(a: number, b: number, n: number) {
 
 /**
  * Editorial-style cursor: sharp dot + softly trailing ring (lerp).
+ * Uses CSS vars (--fg, --cursor-ring) so it inverts in dark mode.
  * Disabled on touch / reduced-motion. No extra npm deps.
  */
 export default function SmoothCursor() {
@@ -68,20 +69,20 @@ export default function SmoothCursor() {
     <>
       <div
         ref={ringRef}
-        className="pointer-events-none fixed left-0 top-0 z-[10000] opacity-0 mix-blend-multiply transition-opacity duration-150"
+        className="pointer-events-none fixed left-0 top-0 z-[10000] opacity-0 transition-opacity duration-150"
         style={{
-          width: 36,
-          height: 36,
+          width: 32,
+          height: 32,
           borderRadius: 9999,
-          border: "1px solid rgba(23, 23, 23, 0.22)",
+          border: "1px solid var(--cursor-ring)",
           willChange: "transform",
         }}
         aria-hidden
       />
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[10001] h-[5px] w-[5px] opacity-0 rounded-full bg-neutral-900 transition-opacity duration-150"
-        style={{ willChange: "transform" }}
+        className="pointer-events-none fixed left-0 top-0 z-[10001] h-[5px] w-[5px] opacity-0 rounded-full transition-opacity duration-150"
+        style={{ background: "var(--fg)", willChange: "transform" }}
         aria-hidden
       />
     </>
