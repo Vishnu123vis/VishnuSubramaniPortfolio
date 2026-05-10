@@ -134,12 +134,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 32px;
-    width: 32px;
+    height: 36px;
+    width: 36px;
     border: 1px solid var(--line);
     background-color: var(--bg);
     color: var(--muted);
-    border-radius: 8px;
+    border-radius: 9px;
     transition:
       color 0.2s ease,
       background-color 0.2s ease,
@@ -169,21 +169,21 @@
   }
 
   .section {
-    margin-top: 3rem;
-    padding-top: 2.25rem;
+    margin-top: 3.5rem;
+    padding-top: 2.5rem;
     border-top: 1px solid var(--line-soft);
     scroll-margin-top: 7rem;
   }
   @media (min-width: 640px) {
     .section {
-      margin-top: 3.5rem;
-      padding-top: 2.5rem;
+      margin-top: 4.25rem;
+      padding-top: 3rem;
     }
   }
 
   .section-title {
-    margin-bottom: 1.25rem;
-    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: -0.01em;
     color: var(--fg);

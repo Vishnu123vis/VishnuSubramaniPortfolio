@@ -31,19 +31,19 @@ function ExternalLink({
 
 export default function Home() {
   return (
-    <div className="min-h-screen px-5 pb-28 pt-12 sm:px-8 sm:pb-32 sm:pt-16">
-      <div className="fixed right-4 top-4 z-40 sm:right-6 sm:top-6">
+    <div className="min-h-screen px-6 pb-32 pt-14 sm:px-10 sm:pb-40 sm:pt-20">
+      <div className="fixed right-5 top-5 z-40 sm:right-7 sm:top-7">
         <ThemeToggle />
       </div>
 
-      <article className="animate-enter mx-auto max-w-xl text-pretty">
+      <article className="animate-enter mx-auto max-w-2xl text-pretty">
         <section aria-label="Introduction">
-          <div className="flex flex-col gap-7 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
-            <div className="order-2 min-w-0 flex-1 space-y-6 sm:order-1">
-              <p className="text-fg text-[1.4rem] font-medium leading-snug tracking-tight">
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
+            <div className="order-2 min-w-0 flex-1 space-y-7 sm:order-1">
+              <p className="text-fg text-[1.85rem] font-medium leading-tight tracking-tight sm:text-[2rem]">
                 hey, I&apos;m vishnu
               </p>
-              <div className="text-body space-y-4 text-[15px] leading-relaxed">
+              <div className="text-body space-y-4 text-[17px] leading-relaxed">
                 <p>
                   management engineering @{" "}
                   <ExternalLink href={UW}>university of waterloo</ExternalLink>
@@ -79,7 +79,7 @@ export default function Home() {
               alt=""
               width={1024}
               height={903}
-              className="order-1 h-auto w-[4.75rem] shrink-0 object-contain object-left dark:invert dark:opacity-90 sm:order-2 sm:mt-1 sm:w-[6rem]"
+              className="order-1 h-auto w-[6rem] shrink-0 object-contain object-left dark:invert dark:opacity-90 sm:order-2 sm:mt-1 sm:w-[7.5rem]"
               priority
             />
           </div>
@@ -87,7 +87,7 @@ export default function Home() {
 
         <section id="built" className="section">
           <h3 className="section-title">what i&apos;ve built</h3>
-          <ul className="list-arrow text-body space-y-3 text-[15px] leading-snug">
+          <ul className="list-arrow text-body space-y-4 text-[17px] leading-snug">
             {projects.map((p) => (
               <li key={p.title} className="min-w-0">
                 <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-1.5">
@@ -114,7 +114,7 @@ export default function Home() {
 
         <section id="previously" className="section">
           <h3 className="section-title">previously</h3>
-          <ul className="text-body space-y-4 text-[15px] leading-snug">
+          <ul className="text-body space-y-5 text-[17px] leading-snug">
             {experiences.map((exp) => (
               <li key={`${exp.company}-${exp.period}`} className="min-w-0">
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
@@ -132,7 +132,7 @@ export default function Home() {
                       <span>{exp.company.toLowerCase()}</span>
                     )}
                   </div>
-                  <span className="text-muted shrink-0 text-[13.5px] tabular-nums sm:text-sm">
+                  <span className="text-muted shrink-0 text-sm tabular-nums sm:text-[15px]">
                     {exp.period.toLowerCase()}
                   </span>
                 </div>
@@ -143,7 +143,7 @@ export default function Home() {
 
         <section id="stack" className="section">
           <h3 className="section-title">stack</h3>
-          <dl className="text-body space-y-3 text-[15px] leading-relaxed">
+          <dl className="text-body space-y-4 text-[17px] leading-relaxed">
             {(
               [
                 ["languages", skills.languages],
@@ -155,7 +155,7 @@ export default function Home() {
             ).map(([label, items]) => (
               <div
                 key={label}
-                className="grid grid-cols-1 gap-x-4 sm:grid-cols-[6.5rem_1fr]"
+                className="grid grid-cols-1 gap-x-5 sm:grid-cols-[7rem_1fr]"
               >
                 <dt className="text-muted">{label}</dt>
                 <dd className="break-words">{items.join(", ")}</dd>
@@ -166,7 +166,7 @@ export default function Home() {
 
         <section id="contact" className="section">
           <h3 className="section-title">say hi</h3>
-          <p className="text-body text-[15px] leading-relaxed">
+          <p className="text-body text-[17px] leading-relaxed">
             <a
               href={`mailto:${personalInfo.email}`}
               className="link-quiet text-fg font-medium"
@@ -185,9 +185,9 @@ export default function Home() {
           </p>
         </section>
 
-        <footer className="border-line-soft mt-14 border-t pt-9">
+        <footer className="border-line-soft mt-16 border-t pt-10 sm:mt-20 sm:pt-12">
           <SocialLinks />
-          <p className="text-soft mt-7 text-xs">
+          <p className="text-soft mt-8 text-[13px]">
             © {new Date().getFullYear()} {personalInfo.name.toLowerCase()}
           </p>
         </footer>
