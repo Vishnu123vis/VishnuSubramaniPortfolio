@@ -49,12 +49,9 @@ export default function Home() {
                   </span>
                 </p>
                 <p>
-                  currently @{" "}
-                  <ExternalLink href="https://www.linkedin.com/company/tedxuw/">
-                    tedxuw
-                  </ExternalLink>
-                  , shipping speaker &amp; ticket tooling with next.js,
-                  prisma, and clerk.
+                  currently looking for a{" "}
+                  <span className="text-neutral-900">summer &apos;26 swe internship</span>{" "}
+                  — backend, cloud, or applied ai. open to remote and toronto/waterloo.
                 </p>
                 <p>
                   winter &apos;26 @{" "}
