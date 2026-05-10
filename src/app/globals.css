@@ -24,7 +24,11 @@
 
 @layer utilities {
   .link-quiet {
-    @apply underline decoration-neutral-400 underline-offset-[3px] transition-colors hover:decoration-neutral-900 hover:text-neutral-950;
+    @apply rounded-sm underline decoration-neutral-400 underline-offset-[3px] transition-colors hover:decoration-neutral-900 hover:text-neutral-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900;
+  }
+
+  .icon-link {
+    @apply rounded-md p-1 text-neutral-400 transition-colors hover:text-neutral-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900;
   }
 
   .list-arrow > li {
@@ -35,6 +39,10 @@
     .list-arrow > li:hover {
       @apply border-neutral-200 pl-1;
     }
+  }
+
+  .section-title {
+    @apply mb-4 mt-14 scroll-mt-28 text-base font-semibold tracking-tight text-neutral-900 sm:mt-16;
   }
 }
 

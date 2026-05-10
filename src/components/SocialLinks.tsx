@@ -21,7 +21,7 @@ export default function SocialLinks() {
   const links = getSocialLinks();
 
   return (
-    <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-6">
       {links.map((link) => {
         const Icon = iconMap[link.icon];
         const isResume = link.icon === "resume";
@@ -30,12 +30,12 @@ export default function SocialLinks() {
             key={`${link.icon}-${link.url}`}
             href={link.url}
             aria-label={link.name}
-            className="text-neutral-400 transition-colors hover:text-neutral-900"
+            className="icon-link inline-flex"
             {...(isResume
               ? { download: true }
               : { target: "_blank", rel: "noopener noreferrer" })}
           >
-            <Icon className="h-5 w-5" aria-hidden />
+            <Icon className="h-5 w-5 shrink-0" aria-hidden />
           </a>
         );
       })}

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 import SocialLinks from "@/components/SocialLinks";
 import { education } from "@/data/education";
@@ -13,7 +14,7 @@ function ExternalLink({
   children,
 }: {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <a
@@ -29,16 +30,18 @@ function ExternalLink({
 
 export default function Home() {
   return (
-    <div className="min-h-screen px-6 pb-24 pt-14 sm:px-8 sm:pt-20">
-      <article className="animate-enter mx-auto max-w-xl">
-        <Image
-          src="/signature.png"
-          alt=""
-          width={1024}
-          height={903}
-          className="h-auto w-[min(13.5rem,88vw)] object-contain object-left"
-          priority
-        />
+    <div className="min-h-screen px-5 pb-28 pt-12 sm:px-8 sm:pb-32 sm:pt-16">
+      <article className="animate-enter mx-auto max-w-xl text-pretty">
+        <div className="relative">
+          <Image
+            src="/signature.png"
+            alt=""
+            width={1024}
+            height={903}
+            className="h-auto w-[min(13.5rem,85vw)] object-contain object-left"
+            priority
+          />
+        </div>
 
         <p className="mt-10 text-[1.35rem] font-medium leading-snug tracking-tight text-neutral-900">
           hey, I&apos;m vishnu
@@ -73,38 +76,40 @@ export default function Home() {
           </p>
         </div>
 
-        <h3
-          id="built"
-          className="mb-3 mt-14 scroll-mt-24 text-base font-semibold text-neutral-900"
-        >
+        <h3 id="built" className="section-title">
           what i&apos;ve built
         </h3>
-        <ul className="list-arrow space-y-2.5 text-[15px] leading-snug text-neutral-800">
+        <ul className="list-arrow space-y-3 text-[15px] leading-snug text-neutral-800">
           {projects.map((p) => (
-            <li key={p.title} className="flex flex-wrap items-baseline gap-x-1">
-              <span className="text-neutral-400" aria-hidden>
-                ↳
-              </span>
-              {p.github ? (
-                <ExternalLink href={p.github}>{p.title.toLowerCase()}</ExternalLink>
-              ) : (
-                <span>{p.title.toLowerCase()}</span>
-              )}
-              <span className="text-neutral-500">— {p.tagline}</span>
+            <li key={p.title} className="min-w-0">
+              <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:gap-x-1.5">
+                <span className="inline-flex flex-wrap items-baseline gap-x-1.5">
+                  <span className="text-neutral-400" aria-hidden>
+                    ↳
+                  </span>
+                  {p.github ? (
+                    <ExternalLink href={p.github}>
+                      {p.title.toLowerCase()}
+                    </ExternalLink>
+                  ) : (
+                    <span>{p.title.toLowerCase()}</span>
+                  )}
+                </span>
+                <span className="break-words text-neutral-500 sm:max-w-none">
+                  — {p.tagline}
+                </span>
+              </div>
             </li>
           ))}
         </ul>
 
-        <h3
-          id="previously"
-          className="mb-3 mt-14 scroll-mt-24 text-base font-semibold text-neutral-900"
-        >
+        <h3 id="previously" className="section-title">
           previously
         </h3>
-        <ul className="space-y-4 text-[15px] leading-snug text-neutral-800">
+        <ul className="space-y-5 text-[15px] leading-snug text-neutral-800">
           {experiences.map((exp) => (
-            <li key={`${exp.company}-${exp.period}`}>
-              <div className="flex flex-wrap items-baseline gap-x-1">
+            <li key={`${exp.company}-${exp.period}`} className="min-w-0">
+              <div className="flex flex-wrap items-baseline gap-x-1.5">
                 <span className="text-neutral-400" aria-hidden>
                   ↳
                 </span>
@@ -122,19 +127,27 @@ export default function Home() {
                 </span>
               </div>
               {exp.website && !exp.companyUrl && (
-                <p className="ml-4 mt-0.5 text-sm">
+                <p className="mt-0.5 text-sm sm:ml-4">
                   <ExternalLink href={exp.website}>
                     {exp.website.replace(/^https?:\/\//, "")}
                   </ExternalLink>
                 </p>
               )}
-              <details className="ml-4 mt-1.5 border-l border-neutral-200 pl-3">
-                <summary className="cursor-pointer select-none text-sm text-neutral-500 hover:text-neutral-800">
+              <details className="group ml-0 mt-2 border-l border-neutral-200 pl-3 sm:ml-4">
+                <summary className="cursor-pointer select-none text-sm text-neutral-500 transition-colors hover:text-neutral-800">
                   highlights
+                  <span className="ml-1 text-neutral-400 group-open:hidden">
+                    +
+                  </span>
+                  <span className="ml-1 hidden text-neutral-400 group-open:inline">
+                    −
+                  </span>
                 </summary>
                 <ul className="mt-2 space-y-1.5 text-[14px] leading-relaxed text-neutral-700">
                   {exp.achievements.map((line) => (
-                    <li key={line}>{line}</li>
+                    <li key={line} className="break-words">
+                      {line}
+                    </li>
                   ))}
                 </ul>
                 {exp.technologies && exp.technologies.length > 0 && (
@@ -147,36 +160,33 @@ export default function Home() {
           ))}
         </ul>
 
-        <h3
-          id="stack"
-          className="mb-3 mt-14 scroll-mt-24 text-base font-semibold text-neutral-900"
-        >
+        <h3 id="stack" className="section-title">
           stack
         </h3>
         <div className="space-y-3 text-[15px] leading-relaxed text-neutral-700">
-          <p>
+          <p className="break-words">
             <span className="text-neutral-500">languages — </span>
             {skills.languages.join(", ")}
           </p>
-          <p>
+          <p className="break-words">
             <span className="text-neutral-500">frameworks — </span>
             {skills.frameworks.join(", ")}
           </p>
-          <p>
+          <p className="break-words">
             <span className="text-neutral-500">data — </span>
             {skills.databases.join(", ")}
           </p>
-          <p>
+          <p className="break-words">
             <span className="text-neutral-500">cloud — </span>
             {skills.cloud.join(", ")}
           </p>
-          <p>
+          <p className="break-words">
             <span className="text-neutral-500">tools — </span>
             {skills.tools.join(", ")}
           </p>
         </div>
 
-        <p className="mt-14 text-[15px] text-neutral-700">
+        <p className="mt-14 text-[15px] leading-relaxed text-neutral-700">
           say hi —{" "}
           <a
             href={`mailto:${personalInfo.email}`}
@@ -195,9 +205,9 @@ export default function Home() {
           waterloo, on
         </p>
 
-        <footer className="mt-12 border-t border-neutral-200 pt-8">
+        <footer className="mt-14 border-t border-neutral-200 pt-9">
           <SocialLinks />
-          <p className="mt-6 text-xs text-neutral-400">
+          <p className="mt-7 text-xs text-neutral-400">
             © {new Date().getFullYear()} {personalInfo.name.toLowerCase()}
           </p>
         </footer>
