@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
+import SmoothCursor from "@/components/SmoothCursor";
 import "./globals.css";
 
 const ibm = IBM_Plex_Sans({
@@ -37,7 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${ibm.variable} scroll-smooth`}>
-      <body className={`${ibm.className} min-h-screen`}>{children}</body>
+      <body className={`${ibm.className} min-h-screen`}>
+        <SmoothCursor />
+        {children}
+      </body>
     </html>
   );
 }

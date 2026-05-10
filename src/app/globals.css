@@ -9,6 +9,14 @@
     @apply bg-white text-neutral-900 antialiased;
   }
 
+  /* Custom cursor (SmoothCursor): hide default on fine pointers only */
+  @media (pointer: fine) {
+    html.cursor-custom-on,
+    html.cursor-custom-on * {
+      cursor: none !important;
+    }
+  }
+
   ::selection {
     @apply bg-neutral-200 text-neutral-900;
   }

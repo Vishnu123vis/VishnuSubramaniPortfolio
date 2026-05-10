@@ -32,49 +32,54 @@ export default function Home() {
   return (
     <div className="min-h-screen px-5 pb-28 pt-12 sm:px-8 sm:pb-32 sm:pt-16">
       <article className="animate-enter mx-auto max-w-xl text-pretty">
-        <div className="relative">
-          <Image
-            src="/signature.png"
-            alt=""
-            width={1024}
-            height={903}
-            className="h-auto w-[min(13.5rem,85vw)] object-contain object-left"
-            priority
-          />
-        </div>
-
-        <p className="mt-10 text-[1.35rem] font-medium leading-snug tracking-tight text-neutral-900">
-          hey, I&apos;m vishnu
-        </p>
-
-        <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-neutral-700">
-          <p>
-            management engineering @{" "}
-            <ExternalLink href={UW}>university of waterloo</ExternalLink>
-            <span className="text-neutral-500">
-              {" "}
-              · {education.gpa} · {education.graduationYear.toLowerCase()}
-            </span>
-          </p>
-          <p>
-            currently @{" "}
-            <ExternalLink href="https://www.linkedin.com/company/tedxuw/">
-              tedxuw
-            </ExternalLink>
-            , shipping speaker &amp; ticket tooling with next.js, prisma, and
-            clerk.
-          </p>
-          <p>
-            winter &apos;26 @{" "}
-            <ExternalLink href="https://www.sunlife.com/">sun life</ExternalLink>
-            — rag + bedrock validation, lambda services, openshift, and a
-            backstage plugin.
-          </p>
-          <p className="text-neutral-600">
-            interested in dependable backends, applied ai, and interfaces that
-            stay out of the way.
-          </p>
-        </div>
+        <section className="border-b border-neutral-100 pb-10">
+          <div className="flex flex-col gap-7 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
+            <div className="order-2 min-w-0 flex-1 space-y-6 sm:order-1">
+              <p className="text-[1.35rem] font-medium leading-snug tracking-tight text-neutral-900">
+                hey, I&apos;m vishnu
+              </p>
+              <div className="space-y-4 text-[15px] leading-relaxed text-neutral-700">
+                <p>
+                  management engineering @{" "}
+                  <ExternalLink href={UW}>university of waterloo</ExternalLink>
+                  <span className="text-neutral-500">
+                    {" "}
+                    · {education.gpa} ·{" "}
+                    {education.graduationYear.toLowerCase()}
+                  </span>
+                </p>
+                <p>
+                  currently @{" "}
+                  <ExternalLink href="https://www.linkedin.com/company/tedxuw/">
+                    tedxuw
+                  </ExternalLink>
+                  , shipping speaker &amp; ticket tooling with next.js,
+                  prisma, and clerk.
+                </p>
+                <p>
+                  winter &apos;26 @{" "}
+                  <ExternalLink href="https://www.sunlife.com/">
+                    sun life
+                  </ExternalLink>
+                  — rag + bedrock validation, lambda services, openshift, and a
+                  backstage plugin.
+                </p>
+                <p className="text-neutral-600">
+                  interested in dependable backends, applied ai, and interfaces
+                  that stay out of the way.
+                </p>
+              </div>
+            </div>
+            <Image
+              src="/signature.png"
+              alt=""
+              width={1024}
+              height={903}
+              className="order-1 h-auto w-[4.75rem] shrink-0 object-contain object-left sm:order-2 sm:mt-1 sm:w-[6rem]"
+              priority
+            />
+          </div>
+        </section>
 
         <h3 id="built" className="section-title">
           what i&apos;ve built
@@ -106,7 +111,7 @@ export default function Home() {
         <h3 id="previously" className="section-title">
           previously
         </h3>
-        <ul className="space-y-5 text-[15px] leading-snug text-neutral-800">
+        <ul className="space-y-4 text-[15px] leading-snug text-neutral-800">
           {experiences.map((exp) => (
             <li key={`${exp.company}-${exp.period}`} className="min-w-0">
               <div className="flex flex-wrap items-baseline gap-x-1.5">
@@ -133,29 +138,6 @@ export default function Home() {
                   </ExternalLink>
                 </p>
               )}
-              <details className="group ml-0 mt-2 border-l border-neutral-200 pl-3 sm:ml-4">
-                <summary className="cursor-pointer select-none text-sm text-neutral-500 transition-colors hover:text-neutral-800">
-                  highlights
-                  <span className="ml-1 text-neutral-400 group-open:hidden">
-                    +
-                  </span>
-                  <span className="ml-1 hidden text-neutral-400 group-open:inline">
-                    −
-                  </span>
-                </summary>
-                <ul className="mt-2 space-y-1.5 text-[14px] leading-relaxed text-neutral-700">
-                  {exp.achievements.map((line) => (
-                    <li key={line} className="break-words">
-                      {line}
-                    </li>
-                  ))}
-                </ul>
-                {exp.technologies && exp.technologies.length > 0 && (
-                  <p className="mt-2 text-[13px] leading-snug text-neutral-500">
-                    {exp.technologies.join(" · ")}
-                  </p>
-                )}
-              </details>
             </li>
           ))}
         </ul>
