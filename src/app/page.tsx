@@ -29,8 +29,7 @@ function ExternalLink({
   );
 }
 
-const SECTION_HEAD =
-  "mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-soft";
+const SECTION_HEAD = "mb-4 text-[13.5px] font-medium text-muted sm:text-[14px]";
 
 export default function Home() {
   return (
@@ -140,7 +139,7 @@ export default function Home() {
                   key={label}
                   className="grid grid-cols-[3.25rem_1fr] gap-x-3"
                 >
-                  <dt className="text-soft pt-[1px] text-[10.5px] font-semibold uppercase tracking-[0.16em]">
+                  <dt className="text-soft pt-[1px] text-[13px] font-normal sm:text-[13.5px]">
                     {label}
                   </dt>
                   <dd className="break-words">{items.join(", ")}</dd>
