@@ -1,60 +1,15 @@
 @import "tailwindcss";
 
-/* AOS (Animate On Scroll) CSS */
-@import 'aos/dist/aos.css';
-
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
-    background-color: #111827;
-    color: white;
+    @apply bg-stone-50 text-stone-900 antialiased;
   }
-}
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent;
+  ::selection {
+    @apply bg-stone-200 text-stone-900;
   }
-  
-  .bg-glass {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10;
-  }
-  
-  .hover-lift {
-    @apply transition-all duration-300 transform hover:-translate-y-2;
-  }
-}
-
-/* Custom animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #1f2937;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-purple-500 to-pink-500 rounded-full;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply from-purple-400 to-pink-400;
 }

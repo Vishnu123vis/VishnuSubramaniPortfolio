@@ -1,21 +1,53 @@
 export const skills = {
   languages: [
-    "Python", "JavaScript", "TypeScript", "HTML/CSS", "SQL", 
-    "Bash", "Excel VBA", "C++", "Java (basic)"
+    "Python",
+    "JavaScript",
+    "TypeScript",
+    "HTML/CSS",
+    "SQL",
+    "Bash",
+    "Excel VBA",
+    "C++",
+    "Java (basic)",
   ],
   frameworks: [
-    "React", "Next.js", "Node.js", "Express.js", "FastAPI", 
-    "TailwindCSS", "Chart.js", "Three.js", "Prisma", "Mongoose", "Recharts"
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "FastAPI",
+    "TailwindCSS",
+    "Chart.js",
+    "Three.js",
+    "Prisma",
+    "Mongoose",
+    "Recharts",
   ],
   databases: [
-    "DynamoDB", "MongoDB", "PostgreSQL", "MySQL", "Firebase", "Supabase"
+    "DynamoDB",
+    "MongoDB",
+    "PostgreSQL",
+    "MySQL",
+    "Firebase",
+    "Supabase",
   ],
   cloud: [
-    "AWS (Lambda, API Gateway, DynamoDB, Cognito, EventBridge, S3, SES)", 
-    "Vercel", "Google Cloud", "Docker"
+    "AWS (Lambda, API Gateway, DynamoDB, Cognito, EventBridge, S3, SES, Bedrock)",
+    "Vercel",
+    "Google Cloud",
+    "Docker",
+    "Red Hat OpenShift",
   ],
   tools: [
-    "Git/GitHub", "Postman", "Jira", "Figma", "Notion", "Excel", 
-    "Stripe API", "OpenAI API", "REST APIs", "WebSockets"
-  ]
+    "Git/GitHub",
+    "Postman",
+    "Jira",
+    "Figma",
+    "Notion",
+    "Backstage",
+    "Stripe API",
+    "OpenAI API",
+    "REST APIs",
+    "WebSockets",
+  ],
 };
