@@ -29,7 +29,8 @@ function ExternalLink({
   );
 }
 
-const SECTION_HEAD = "mb-4 text-[13.5px] font-medium text-muted sm:text-[14px]";
+const SECTION_HEAD =
+  "mb-2.5 text-[14px] font-medium text-muted sm:text-[15px]";
 
 export default function Home() {
   return (
@@ -38,21 +39,21 @@ export default function Home() {
         <ThemeToggle />
       </div>
 
-      <article className="animate-enter mx-auto flex h-full w-full max-w-6xl flex-col gap-7 lg:gap-9">
-        <header className="flex items-start gap-5 sm:gap-8">
+      <article className="animate-enter mx-auto flex h-full w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
+        <header className="flex items-start gap-5 sm:gap-7">
           <Image
             src="/signature.png"
             alt=""
             width={1024}
             height={903}
-            className="h-auto w-[3.25rem] shrink-0 object-contain object-left dark:invert sm:w-[4rem] lg:w-[4.5rem]"
+            className="h-auto w-[3.25rem] shrink-0 object-contain object-left dark:invert sm:w-[3.75rem] lg:w-[4.25rem]"
             priority
           />
           <div className="min-w-0 flex-1 space-y-1.5">
-            <p className="text-fg text-[1.45rem] font-medium leading-tight tracking-tight sm:text-[1.7rem] lg:text-[1.95rem]">
+            <p className="text-fg text-[1.5rem] font-medium leading-tight tracking-tight sm:text-[1.75rem] lg:text-[1.95rem]">
               hey, I&apos;m vishnu
             </p>
-            <p className="text-body text-[13.5px] leading-relaxed sm:text-[14.5px]">
+            <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
               management engineering @{" "}
               <ExternalLink href={UW}>university of waterloo</ExternalLink>
               <span className="text-muted">
@@ -62,7 +63,7 @@ export default function Home() {
                 {education.graduationYear.toLowerCase()}
               </span>
             </p>
-            <p className="text-body text-[13.5px] leading-relaxed sm:text-[14.5px]">
+            <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
               currently looking for a{" "}
               <span className="text-fg">fall &apos;26 swe internship</span>
               {" — "}backend, cloud, or applied ai.
@@ -70,87 +71,83 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="grid min-h-0 flex-1 grid-cols-1 gap-y-8 md:grid-cols-3 md:gap-x-8 lg:gap-x-12">
-          <section className="min-w-0">
-            <h3 className={SECTION_HEAD}>what i&apos;ve built</h3>
-            <ul className="list-arrow text-body space-y-3.5 text-[13.5px] leading-snug sm:text-[14px]">
-              {projects.map((p) => (
-                <li key={p.title} className="min-w-0">
-                  <div className="flex flex-wrap items-baseline gap-x-1.5">
-                    <span className="text-soft" aria-hidden>
-                      ↳
-                    </span>
-                    {p.github ? (
-                      <ExternalLink href={p.github}>
-                        {p.title.toLowerCase()}
-                      </ExternalLink>
-                    ) : (
-                      <span className="text-fg">{p.title.toLowerCase()}</span>
-                    )}
-                  </div>
-                  <p className="text-muted ml-4 mt-0.5 text-[12.5px] leading-snug">
-                    {p.tagline}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </section>
+        <section>
+          <h3 className={SECTION_HEAD}>what i&apos;ve built</h3>
+          <ul className="list-arrow text-body space-y-2 text-[14px] leading-snug sm:text-[15px]">
+            {projects.map((p) => (
+              <li
+                key={p.title}
+                className="flex flex-wrap items-baseline gap-x-2"
+              >
+                <span className="text-soft" aria-hidden>
+                  ↳
+                </span>
+                {p.github ? (
+                  <ExternalLink href={p.github}>
+                    {p.title.toLowerCase()}
+                  </ExternalLink>
+                ) : (
+                  <span className="text-fg">{p.title.toLowerCase()}</span>
+                )}
+                <span className="text-muted">— {p.tagline.toLowerCase()}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-          <section className="border-line-soft min-w-0 md:border-l md:pl-8 lg:pl-12">
-            <h3 className={SECTION_HEAD}>previously</h3>
-            <ul className="text-body space-y-3.5 text-[13.5px] leading-snug sm:text-[14px]">
-              {experiences.map((exp) => (
-                <li key={`${exp.company}-${exp.period}`} className="min-w-0">
-                  <div className="flex flex-wrap items-baseline gap-x-1.5">
-                    <span className="text-soft" aria-hidden>
-                      ↳
-                    </span>
-                    <span className="text-fg">{exp.roleShort}</span>
-                    <span className="text-muted">@</span>
-                    {exp.companyUrl ? (
-                      <ExternalLink href={exp.companyUrl}>
-                        {exp.company.toLowerCase()}
-                      </ExternalLink>
-                    ) : (
-                      <span>{exp.company.toLowerCase()}</span>
-                    )}
-                  </div>
-                  <p className="text-muted ml-4 mt-0.5 text-[12.5px] tabular-nums">
-                    {exp.period.toLowerCase()}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </section>
+        <section>
+          <h3 className={SECTION_HEAD}>previously</h3>
+          <ul className="text-body space-y-2 text-[14px] leading-snug sm:text-[15px]">
+            {experiences.map((exp) => (
+              <li
+                key={`${exp.company}-${exp.period}`}
+                className="flex flex-wrap items-baseline gap-x-2"
+              >
+                <span className="text-soft" aria-hidden>
+                  ↳
+                </span>
+                <span className="text-fg">{exp.roleShort.toLowerCase()}</span>
+                <span className="text-muted">@</span>
+                {exp.companyUrl ? (
+                  <ExternalLink href={exp.companyUrl}>
+                    {exp.company.toLowerCase()}
+                  </ExternalLink>
+                ) : (
+                  <span>{exp.company.toLowerCase()}</span>
+                )}
+                <span className="text-muted tabular-nums">
+                  · {exp.period.toLowerCase()}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-          <section className="border-line-soft min-w-0 md:border-l md:pl-8 lg:pl-12">
-            <h3 className={SECTION_HEAD}>stack</h3>
-            <dl className="text-body space-y-2.5 text-[13px] leading-relaxed sm:text-[13.5px]">
-              {(
-                [
-                  ["lang", skills.languages],
-                  ["fwk", skills.frameworks],
-                  ["data", skills.databases],
-                  ["cloud", skills.cloud],
-                  ["tools", skills.tools],
-                ] as const
-              ).map(([label, items]) => (
-                <div
-                  key={label}
-                  className="grid grid-cols-[3.25rem_1fr] gap-x-3"
-                >
-                  <dt className="text-soft pt-[1px] text-[13px] font-normal sm:text-[13.5px]">
-                    {label}
-                  </dt>
-                  <dd className="break-words">{items.join(", ")}</dd>
-                </div>
-              ))}
-            </dl>
-          </section>
-        </main>
+        <section>
+          <h3 className={SECTION_HEAD}>stack</h3>
+          <dl className="text-body space-y-1.5 text-[14px] leading-relaxed sm:text-[15px]">
+            {(
+              [
+                ["lang", skills.languages],
+                ["fwk", skills.frameworks],
+                ["data", skills.databases],
+                ["cloud", skills.cloud],
+                ["tools", skills.tools],
+              ] as const
+            ).map(([label, items]) => (
+              <div
+                key={label}
+                className="flex flex-wrap items-baseline gap-x-3"
+              >
+                <dt className="text-soft w-[3rem] shrink-0">{label}</dt>
+                <dd className="min-w-0 flex-1">{items.join(", ").toLowerCase()}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
 
-        <footer className="border-line-soft flex flex-col gap-3 border-t pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-5">
-          <p className="text-body text-[13px] leading-relaxed sm:text-[13.5px]">
+        <footer className="border-line-soft mt-auto flex flex-col gap-3 border-t pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-5">
+          <p className="text-body text-[13.5px] leading-relaxed sm:text-[14px]">
             <a
               href={`mailto:${personalInfo.email}`}
               className="link-quiet text-fg font-medium"
@@ -167,12 +164,7 @@ export default function Home() {
             <span className="text-soft"> · </span>
             waterloo, on
           </p>
-          <div className="flex items-center justify-between gap-4 sm:gap-5">
-            <SocialLinks />
-            <span className="text-soft hidden text-[12px] sm:inline">
-              © {new Date().getFullYear()} {personalInfo.name.toLowerCase()}
-            </span>
-          </div>
+          <SocialLinks />
         </footer>
       </article>
     </div>
