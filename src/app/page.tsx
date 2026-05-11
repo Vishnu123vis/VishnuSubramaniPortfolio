@@ -146,7 +146,7 @@ export default function Home() {
           </dl>
         </section>
 
-        <footer className="border-line-soft flex flex-col gap-3 border-t pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-5">
+        <footer className="border-line-soft -mt-2 flex flex-col gap-3 border-t pt-3 sm:-mt-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-3.5">
           <p className="text-body text-[13.5px] leading-relaxed sm:text-[14px]">
             <a
               href={`mailto:${personalInfo.email}`}
