@@ -30,16 +30,16 @@ function ExternalLink({
 }
 
 const SECTION_HEAD =
-  "mb-2 text-[14px] font-medium text-muted sm:text-[15px]";
+  "mb-2.5 text-[14px] font-medium text-muted sm:text-[15px]";
 
 export default function Home() {
   return (
-    <div className="grid min-h-svh place-items-center px-6 py-[clamp(0.875rem,3vh,2.25rem)] sm:px-10">
+    <div className="min-h-svh px-6 py-7 sm:px-10 sm:py-9 md:h-svh md:overflow-hidden lg:py-10">
       <div className="fixed right-5 top-5 z-40 sm:right-7 sm:top-7">
         <ThemeToggle />
       </div>
 
-      <article className="animate-enter flex w-full max-w-[44rem] flex-col gap-[clamp(0.75rem,2vh,1.5rem)]">
+      <article className="animate-enter mx-auto flex h-full w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
         <header className="flex items-start gap-5 sm:gap-7">
           <Image
             src="/signature.png"
@@ -125,7 +125,7 @@ export default function Home() {
 
         <section>
           <h3 className={SECTION_HEAD}>stack</h3>
-          <dl className="text-body space-y-1.5 text-[14px] leading-snug sm:text-[15px]">
+          <dl className="text-body space-y-1.5 text-[14px] leading-relaxed sm:text-[15px]">
             {(
               [
                 ["lang", skills.languages],
