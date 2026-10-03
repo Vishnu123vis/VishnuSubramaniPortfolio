@@ -12,6 +12,23 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Keyfortly",
+    tagline: "property management for five businesses and three landlords. rent, leases, maintenance, and Ontario LTB paperwork",
+    description: "Property-management SaaS built and operated end to end.",
+    period: "Ongoing",
+    technologies: ["React", "TypeScript", "AWS", "DynamoDB"],
+    features: ["Rent and tenant management", "Leases and e-signing", "Maintenance tracking"],
+    live: "https://keyfortly.com/",
+  },
+  {
+    title: "Keyfortly Agent",
+    tagline: "turns tenant messages into maintenance cases, with manager approvals, human takeover, and an audit trail. in development",
+    description: "An AI operations assistant for property managers, currently in private development.",
+    period: "Ongoing",
+    technologies: ["Next.js", "TypeScript", "OpenAI", "Twilio", "AWS CDK"],
+    features: ["Tenant message intake", "Approval-controlled follow-ups", "Operations dashboard"],
+  },
+  {
     title: "Findr",
     tagline:
       "hackathon team matching — gemini resume parsing, swipe flow, fastapi + mongodb",
@@ -33,39 +50,5 @@ export const projects: Project[] = [
       "AI-driven profile matching",
     ],
     github: "https://github.com/Vishnu123vis/Findr",
-  },
-  {
-    title: "Serverless E-commerce Platform",
-    tagline:
-      "full checkout on aws — 15+ lambdas, single-table dynamodb, cognito + ses",
-    period: "May 2025",
-    description: "Full-stack serverless e-commerce application with AWS infrastructure",
-    technologies: [
-      "TypeScript",
-      "AWS Lambda",
-      "DynamoDB",
-      "Cognito",
-      "SES",
-      "EventBridge",
-    ],
-    features: [
-      "15+ Lambda serverless backend",
-      "Single-table DynamoDB schema with GSIs",
-      "Cognito-secured APIs, SES order emails",
-    ],
-    github: "https://github.com/Vishnu123vis/serverless-ecommerce-platform",
-  },
-  {
-    title: "Spotify Playlist Genre Analyzer",
-    tagline: "playlist genre charts with chart.js + spotify web api",
-    period: "Sep 2024",
-    description: "Analyze and visualize music genres in Spotify playlists",
-    technologies: ["JavaScript", "React", "Chart.js", "Spotify API"],
-    features: [
-      "Analyzed up to 60 songs per playlist",
-      "Visualizations with Chart.js",
-      "Automated fetching with Axios (manual effort -80%)",
-    ],
-    github: "https://github.com/Vishnu123vis/spotify-genre-analyzer",
   },
 ];

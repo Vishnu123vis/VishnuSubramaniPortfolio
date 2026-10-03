@@ -13,6 +13,14 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    title: "AI Engineering",
+    roleShort: "building internal AI agents",
+    company: "Revvity",
+    period: "Current",
+    companyUrl: "https://www.revvity.com/",
+    achievements: ["Building internal AI agents."],
+  },
+  {
     title: "AI Software Engineer / Solutions Architect",
     roleShort: "ai software engineer intern",
     company: "Sun Life Financial",

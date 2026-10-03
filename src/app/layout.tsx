@@ -11,20 +11,22 @@ const ibm = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vishnu Subramani",
+  title: "Vishnu Subramani | AI Engineer",
   description:
-    "Management Engineering student at the University of Waterloo. Software engineering, cloud, and full-stack development.",
+    "AI engineer building internal agents at Revvity and Keyfortly, a property-management SaaS. University of Waterloo. Seeking a summer 2027 startup internship.",
   keywords: [
     "Vishnu Subramani",
     "University of Waterloo",
     "Management Engineering",
     "Software Engineer",
+    "AI Engineer",
+    "Keyfortly",
   ],
   authors: [{ name: "Vishnu Subramani" }],
   openGraph: {
-    title: "Vishnu Subramani",
+    title: "Vishnu Subramani | AI Engineer",
     description:
-      "Management Engineering student at the University of Waterloo.",
+      "AI engineer at Waterloo. Building internal agents at Revvity and property-management tools at Keyfortly. Open to summer 2027 startup internships.",
     url: "https://vishnus.online",
     siteName: "Vishnu Subramani",
     type: "website",

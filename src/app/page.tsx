@@ -34,12 +34,12 @@ const SECTION_HEAD =
 
 export default function Home() {
   return (
-    <div className="min-h-svh px-6 py-7 sm:px-10 sm:py-9 md:h-svh md:overflow-hidden lg:py-10">
+    <div className="min-h-svh px-6 py-7 sm:px-10 sm:py-9 lg:py-10">
       <div className="fixed right-5 top-5 z-40 sm:right-7 sm:top-7">
         <ThemeToggle />
       </div>
 
-      <article className="animate-enter mx-auto flex h-full w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
+      <main className="animate-enter mx-auto flex w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
         <header className="flex items-start gap-5 sm:gap-7">
           <Image
             src="/signature.png"
@@ -50,9 +50,9 @@ export default function Home() {
             priority
           />
           <div className="min-w-0 flex-1 space-y-1.5">
-            <p className="text-fg text-[1.5rem] font-medium leading-tight tracking-tight sm:text-[1.75rem] lg:text-[1.95rem]">
+            <h1 className="text-fg text-[1.5rem] font-medium leading-tight tracking-tight sm:text-[1.75rem] lg:text-[1.95rem]">
               hey, I&apos;m vishnu
-            </p>
+            </h1>
             <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
               management engineering @{" "}
               <ExternalLink href={UW}>university of waterloo</ExternalLink>
@@ -64,15 +64,20 @@ export default function Home() {
               </span>
             </p>
             <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
-              currently looking for a{" "}
-              <span className="text-fg">fall &apos;26 swe internship</span>
-              {" — "}backend, cloud, or applied ai.
+              ai engineer building internal agents at{" "}
+              <ExternalLink href="https://www.revvity.com/">revvity</ExternalLink>
+              {" "}and property-management tools at{" "}
+              <ExternalLink href="https://keyfortly.com/">keyfortly</ExternalLink>.
+            </p>
+            <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
+              looking for a <span className="text-fg">summer 2027 ai engineering internship</span>
+              {" "}at a startup where i can own problems and ship useful products.
             </p>
           </div>
         </header>
 
         <section>
-          <h3 className={SECTION_HEAD}>what i&apos;ve built</h3>
+          <h2 className={SECTION_HEAD}>what i&apos;ve built</h2>
           <ul className="list-arrow text-body space-y-2 text-[14px] leading-snug sm:text-[15px]">
             {projects.map((p) => (
               <li
@@ -82,8 +87,8 @@ export default function Home() {
                 <span className="text-soft" aria-hidden>
                   ↳
                 </span>
-                {p.github ? (
-                  <ExternalLink href={p.github}>
+                {(p.live || p.github) ? (
+                  <ExternalLink href={(p.live || p.github)!}>
                     {p.title.toLowerCase()}
                   </ExternalLink>
                 ) : (
@@ -96,7 +101,7 @@ export default function Home() {
         </section>
 
         <section>
-          <h3 className={SECTION_HEAD}>previously</h3>
+          <h2 className={SECTION_HEAD}>experience</h2>
           <ul className="text-body space-y-2 text-[14px] leading-snug sm:text-[15px]">
             {experiences.map((exp) => (
               <li
@@ -124,10 +129,12 @@ export default function Home() {
         </section>
 
         <section>
-          <h3 className={SECTION_HEAD}>stack</h3>
+          <h2 className={SECTION_HEAD}>stack</h2>
           <dl className="text-body space-y-1.5 text-[14px] leading-relaxed sm:text-[15px]">
             {(
               [
+                ["ai", skills.ai],
+                ["agents", skills.agents],
                 ["lang", skills.languages],
                 ["fwk", skills.frameworks],
                 ["data", skills.databases],
@@ -139,7 +146,7 @@ export default function Home() {
                 key={label}
                 className="flex flex-wrap items-baseline gap-x-3"
               >
-                <dt className="text-soft w-[3rem] shrink-0">{label}</dt>
+                <dt className="text-soft w-[3.5rem] shrink-0">{label}</dt>
                 <dd className="min-w-0 flex-1">{items.join(", ").toLowerCase()}</dd>
               </div>
             ))}
@@ -166,7 +173,7 @@ export default function Home() {
           </p>
           <SocialLinks />
         </footer>
-      </article>
+      </main>
     </div>
   );
 }

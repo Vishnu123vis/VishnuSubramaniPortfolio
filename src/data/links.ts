@@ -6,7 +6,6 @@ export const personalInfo = {
   linkedin: "https://www.linkedin.com/in/vishnusubramani/",
   github: "https://github.com/Vishnu123vis",
   phone: "437-231-4480",
-  resumePath: "/resume.pdf",
   /** e.g. https://www.figma.com/@yourusername — leave blank to hide the Figma icon */
   figma: "",
 };
@@ -14,7 +13,7 @@ export const personalInfo = {
 export type SocialLink = {
   name: string;
   url: string;
-  icon: "linkedin" | "github" | "email" | "website" | "resume" | "figma";
+  icon: "linkedin" | "github" | "email" | "website" | "figma";
 };
 
 export function getSocialLinks(): SocialLink[] {
@@ -23,7 +22,6 @@ export function getSocialLinks(): SocialLink[] {
     { name: "GitHub", url: personalInfo.github, icon: "github" },
     { name: "Email", url: `mailto:${personalInfo.email}`, icon: "email" },
     { name: "Website", url: personalInfo.website, icon: "website" },
-    { name: "Resume PDF", url: personalInfo.resumePath, icon: "resume" },
   ];
   if (personalInfo.figma) {
     links.push({ name: "Figma", url: personalInfo.figma, icon: "figma" });
