@@ -13,7 +13,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Keyfortly",
-    tagline: "property management for five businesses and three landlords. rent, leases, maintenance, and Ontario LTB paperwork",
+    tagline: "end-to-end property management built for Ontario landlords. scaled to five property management businesses across the GTA and 40 landlords actively managing their properties",
     description: "Property-management SaaS built and operated end to end.",
     period: "Ongoing",
     technologies: ["React", "TypeScript", "AWS", "DynamoDB"],
