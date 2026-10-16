@@ -14,7 +14,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     title: "AI Engineering",
-    roleShort: "AI engineer · Building agents",
+    roleShort: "building internal AI agents",
     company: "Revvity",
     period: "Current",
     companyUrl: "https://www.revvity.com/",
@@ -22,7 +22,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "AI Software Engineer / Solutions Architect",
-    roleShort: "AI software engineer intern",
+    roleShort: "ai software engineer intern",
     company: "Sun Life Financial",
     location: "Toronto, ON",
     period: "January 2026 – April 2026",
@@ -47,7 +47,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Backend Developer Intern",
-    roleShort: "Backend developer intern",
+    roleShort: "backend developer intern",
     company: "Serverless Guru",
     location: "Remote · Wilmington, DE",
     period: "May 2025 – August 2025",
@@ -67,7 +67,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Software Engineer",
-    roleShort: "Software engineer",
+    roleShort: "software engineer",
     company: "TEDxUW",
     location: "Waterloo, ON",
     period: "April 2025 – Present",
@@ -82,7 +82,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Software Developer",
-    roleShort: "Software developer intern",
+    roleShort: "software developer intern",
     company: "MarTechBees",
     location: "Toronto, ON",
     period: "May 2024 – August 2024",
