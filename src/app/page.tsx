@@ -96,7 +96,7 @@ export default function Home() {
                 ) : (
                   <span className="text-fg">{p.title.toLowerCase()}</span>
                 )}
-                <span className="text-muted">— {p.tagline.toLowerCase()}</span>
+                <span className="text-muted">— {p.tagline}</span>
               </li>
             ))}
           </ul>

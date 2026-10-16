@@ -22,8 +22,8 @@ export const projects: Project[] = [
   },
   {
     title: "Dispatchient",
-    tagline: "formerly keyfortly agent. turns tenant texts and photos into maintenance cases, with policy-controlled coordination, human takeover, and an audit trail. in private testing",
-    description: "A standalone AI maintenance coordinator for landlords and property managers, currently in private synthetic testing.",
+    tagline: "AI-powered maintenance coordination for landlords and property managers, transforming tenant messages and images into structured cases with policy-based oversight, human intervention, and auditable activity records.",
+    description: "A standalone AI-powered maintenance coordination platform for landlords and property managers.",
     period: "Ongoing",
     technologies: ["Next.js", "TypeScript", "OpenAI", "Twilio", "AWS CDK"],
     features: ["Tenant text and photo intake", "Policy-controlled coordination and human review", "Separate tenant and provider conversations", "Operations dashboard and audit trail"],
