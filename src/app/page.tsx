@@ -39,7 +39,7 @@ export default function Home() {
         <ThemeToggle />
       </div>
 
-      <main className="portfolio-main mx-auto flex w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
+      <main className="mx-auto flex w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
         <header className="flex items-start gap-5 sm:gap-7">
           <Image
             src="/signature.png"
@@ -98,6 +98,30 @@ export default function Home() {
                 <span className="text-muted">— {p.tagline}</span>
               </li>
             ))}
+            <li>
+              <details className="music-details">
+                <summary className="music-summary">
+                  <span className="text-soft" aria-hidden>↳</span>
+                  <ExternalLink href="https://www.instagram.com/ghost_notes_official/">ghost notes</ExternalLink>
+                  <span className="text-muted">— I lead a jazz band and play alto saxophone.</span>
+                  <span className="music-toggle text-muted">photos <svg className="music-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></span>
+                </summary>
+                <div className="music-gallery">
+                  <p className="text-muted">We&apos;ve played at restaurants, coffee shops, and Hack the North.</p>
+          <div className="photo-strip">
+            <a href="/photos/alto-performance.webp" target="_blank" rel="noopener noreferrer" aria-label="View saxophone performance photo">
+              <Image src="/photos/alto-performance.webp" alt="Playing alto saxophone with the band at Waterloo" width={1200} height={1009} sizes="(min-width: 1200px) 220px, 35vw" />
+            </a>
+            <a href="/photos/outdoor-jazz.webp" target="_blank" rel="noopener noreferrer" aria-label="View outdoor jazz photo">
+              <Image src="/photos/outdoor-jazz.webp" alt="Playing saxophone at an outdoor performance" width={700} height={1505} sizes="(min-width: 1200px) 106px, 28vw" />
+            </a>
+            <a href="/photos/hack-the-north.webp" target="_blank" rel="noopener noreferrer" aria-label="View Hack the North photo">
+              <Image src="/photos/hack-the-north.webp" alt="With my saxophone and the goose mascot at Hack the North" width={900} height={1200} sizes="(min-width: 1200px) 106px, 28vw" />
+            </a>
+          </div>
+                </div>
+              </details>
+            </li>
           </ul>
         </section>
 
@@ -153,21 +177,6 @@ export default function Home() {
             ))}
           </dl>
         </section>
-
-        <aside className="photo-aside" aria-label="Music and life">
-          <div className="photo-strip">
-            <a href="/photos/alto-performance.webp" target="_blank" rel="noopener noreferrer" aria-label="View saxophone performance photo">
-              <Image src="/photos/alto-performance.webp" alt="Playing alto saxophone with the band at Waterloo" width={1200} height={1009} sizes="(min-width: 1200px) 220px, 35vw" />
-            </a>
-            <a href="/photos/outdoor-jazz.webp" target="_blank" rel="noopener noreferrer" aria-label="View outdoor jazz photo">
-              <Image src="/photos/outdoor-jazz.webp" alt="Playing saxophone at an outdoor performance" width={700} height={1505} sizes="(min-width: 1200px) 106px, 28vw" />
-            </a>
-            <a href="/photos/hack-the-north.webp" target="_blank" rel="noopener noreferrer" aria-label="View Hack the North photo">
-              <Image src="/photos/hack-the-north.webp" alt="With my saxophone and the goose mascot at Hack the North" width={900} height={1200} sizes="(min-width: 1200px) 106px, 28vw" />
-            </a>
-          </div>
-          <p className="text-muted">I lead <ExternalLink href="https://www.instagram.com/ghost_notes_official/">Ghost Notes</ExternalLink> and play alto saxophone. We&apos;ve played at restaurants, coffee shops, and Hack the North.</p>
-        </aside>
 
         <footer className="border-line-soft -mt-2 flex flex-col gap-3 border-t pt-3 sm:-mt-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-3.5">
           <p className="text-body text-[13.5px] leading-relaxed sm:text-[14px]">

@@ -197,19 +197,18 @@
   }
 }
 
-/* A small personal photo panel beside the original compact portfolio. */
-.portfolio-main { position: relative; }
-.photo-aside { font-size: 13px; line-height: 1.6; }
-.photo-aside p { margin-top: 12px; }
-.photo-strip { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 8px; }
-.photo-strip a { display: block; height: 145px; overflow: hidden; border-radius: 6px; }
+/* Photos stay tucked into the Ghost Notes project entry until requested. */
+.music-details { width: 100%; }
+.music-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; cursor: pointer; border-radius: 2px; }
+.music-summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; }
+.music-toggle { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; }
+.music-chevron { transition: transform 160ms ease; }
+.music-details[open] .music-chevron { transform: rotate(180deg); }
+.music-gallery { padding-top: 12px; font-size: 13px; line-height: 1.6; }
+.photo-strip { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 8px; margin-top: 10px; }
+.photo-strip a { display: block; height: 180px; overflow: hidden; border-radius: 6px; }
 .photo-strip img { width: 100%; height: 100%; object-fit: cover; }
 .photo-strip a:nth-child(2) img { object-position: center top; }
 .photo-strip a:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
-@media (min-width: 1200px) {
-  .portfolio-main { transform: translateX(-130px); }
-  .photo-aside { position: absolute; left: calc(100% + 40px); top: 150px; width: 220px; }
-  .photo-strip { grid-template-columns: 1fr 1fr; }
-  .photo-strip a { height: 140px; }
-  .photo-strip a:first-child { grid-column: 1 / -1; height: 175px; }
-}
+@media (max-width: 640px) { .photo-strip a { height: 135px; } }
+@media (prefers-reduced-motion: reduce) { .music-chevron { transition: none; } }
