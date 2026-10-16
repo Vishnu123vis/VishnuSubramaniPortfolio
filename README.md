@@ -1,6 +1,6 @@
 # Vishnu Subramani — Portfolio
 
-The single-page portfolio at https://vishnus.online, built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4. Includes light/dark themes, a native cursor, a compact Ghost Notes entry with an expandable photo gallery, and a static production export.
+The single-page portfolio at https://vishnus.online, built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4. Includes light/dark themes, a native cursor, a compact Ghost Notes entry with a hover/focus photo preview and a mobile tap control, and a static production export.
 
 ## Development
 

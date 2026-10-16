@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import GhostNotes from "@/components/GhostNotes";
 import SocialLinks from "@/components/SocialLinks";
 import ThemeToggle from "@/components/ThemeToggle";
 import { education } from "@/data/education";
@@ -98,30 +99,7 @@ export default function Home() {
                 <span className="text-muted">— {p.tagline}</span>
               </li>
             ))}
-            <li>
-              <details className="music-details">
-                <summary className="music-summary">
-                  <span className="text-soft" aria-hidden>↳</span>
-                  <ExternalLink href="https://www.instagram.com/ghost_notes_official/">ghost notes</ExternalLink>
-                  <span className="text-muted">— I lead a jazz band and play alto saxophone.</span>
-                  <span className="music-toggle text-muted">photos <svg className="music-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg></span>
-                </summary>
-                <div className="music-gallery">
-                  <p className="text-muted">We&apos;ve played at restaurants, coffee shops, and Hack the North.</p>
-          <div className="photo-strip">
-            <a href="/photos/alto-performance.webp" target="_blank" rel="noopener noreferrer" aria-label="View saxophone performance photo">
-              <Image src="/photos/alto-performance.webp" alt="Playing alto saxophone with the band at Waterloo" width={1200} height={1009} sizes="(min-width: 1200px) 220px, 35vw" />
-            </a>
-            <a href="/photos/outdoor-jazz.webp" target="_blank" rel="noopener noreferrer" aria-label="View outdoor jazz photo">
-              <Image src="/photos/outdoor-jazz.webp" alt="Playing saxophone at an outdoor performance" width={700} height={1505} sizes="(min-width: 1200px) 106px, 28vw" />
-            </a>
-            <a href="/photos/hack-the-north.webp" target="_blank" rel="noopener noreferrer" aria-label="View Hack the North photo">
-              <Image src="/photos/hack-the-north.webp" alt="With my saxophone and the goose mascot at Hack the North" width={900} height={1200} sizes="(min-width: 1200px) 106px, 28vw" />
-            </a>
-          </div>
-                </div>
-              </details>
-            </li>
+            <li><GhostNotes /></li>
           </ul>
         </section>
 

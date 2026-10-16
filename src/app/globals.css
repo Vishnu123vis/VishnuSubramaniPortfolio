@@ -197,18 +197,17 @@
   }
 }
 
-/* Photos stay tucked into the Ghost Notes project entry until requested. */
-.music-details { width: 100%; }
-.music-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; cursor: pointer; border-radius: 2px; }
-.music-summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; }
-.music-toggle { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; }
-.music-chevron { transition: transform 160ms ease; }
-.music-details[open] .music-chevron { transform: rotate(180deg); }
-.music-gallery { padding-top: 12px; font-size: 13px; line-height: 1.6; }
-.photo-strip { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 8px; margin-top: 10px; }
-.photo-strip a { display: block; height: 180px; overflow: hidden; border-radius: 6px; }
+/* The compact project row reveals a photo preview without moving the page. */
+.music-entry { position: relative; width: 100%; }
+.music-summary { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.music-toggle { font-size: 12px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.music-gallery { position: absolute; z-index: 30; top: 100%; left: 0; width: 100%; padding-top: 10px; visibility: hidden; opacity: 0; transform: translateY(6px); pointer-events: none; transition: opacity 160ms ease-out, transform 160ms ease-out, visibility 160ms; }
+.music-entry[data-open="true"] .music-gallery { visibility: visible; opacity: 1; transform: translateY(0); pointer-events: auto; }
+.photo-strip { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 8px; padding: 8px; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; }
+.photo-strip a { display: block; height: 180px; overflow: hidden; border-radius: 4px; }
 .photo-strip img { width: 100%; height: 100%; object-fit: cover; }
 .photo-strip a:nth-child(2) img { object-position: center top; }
-.photo-strip a:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+.photo-strip a:focus-visible, .music-toggle:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+@media (hover: hover) and (pointer: fine) { .music-toggle { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } .music-toggle:focus-visible { position: static; width: auto; height: auto; clip-path: none; } }
 @media (max-width: 640px) { .photo-strip a { height: 135px; } }
-@media (prefers-reduced-motion: reduce) { .music-chevron { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .music-gallery { transition: none; transform: none; } }
