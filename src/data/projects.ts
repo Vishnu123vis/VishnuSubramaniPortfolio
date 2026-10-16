@@ -1,5 +1,6 @@
 export interface Project {
   title: string;
+  audience?: string;
   /** One line for the minimal ↳ list */
   tagline: string;
   description: string;
@@ -12,8 +13,9 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Keyfortly",
-    tagline: "end-to-end property management built for Ontario landlords. scaled to five property management businesses across the GTA and 40 landlords actively managing their properties",
+    title: "KeyFortly",
+    audience: "40 landlords · 5 businesses",
+    tagline: "End-to-end property management for Ontario landlords, from leases and rent to maintenance.",
     description: "Property-management SaaS built and operated end to end.",
     period: "Ongoing",
     technologies: ["React", "TypeScript", "AWS", "DynamoDB"],
@@ -22,7 +24,7 @@ export const projects: Project[] = [
   },
   {
     title: "Dispatchient",
-    tagline: "AI-powered maintenance coordination for landlords and property managers, transforming tenant messages and images into structured cases with policy-based oversight, human intervention, and auditable activity records.",
+    tagline: "AI-powered maintenance coordination, from tenant messages to structured cases, with human oversight and an audit trail.",
     description: "A standalone AI-powered maintenance coordination platform for landlords and property managers.",
     period: "Ongoing",
     technologies: ["Next.js", "TypeScript", "OpenAI", "Twilio", "AWS CDK"],
@@ -32,7 +34,7 @@ export const projects: Project[] = [
   {
     title: "Findr",
     tagline:
-      "hackathon team matching — gemini resume parsing, swipe flow, fastapi + mongodb",
+      "Hackathon team matching with AI-powered profiles, resume parsing, and a swipe-based matching flow.",
     period: "Mar 2025",
     description: "Hackathon team matchmaking platform with AI-driven profiles",
     technologies: [

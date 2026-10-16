@@ -1,6 +1,6 @@
 # Vishnu Subramani — Portfolio
 
-The single-page portfolio at https://vishnus.online, built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4. Includes light/dark themes and a static production export.
+The single-page portfolio at https://vishnus.online, built with Next.js 15, React 19, TypeScript, and Tailwind CSS 4. Includes light/dark themes, a native cursor, a personal jazz photo collage, and a static production export.
 
 ## Development
 
@@ -26,6 +26,7 @@ Production files are generated in `out/`. Preview that directory with a static H
 - `src/data/skills.ts`: technical stack and agent tooling
 - `src/data/links.ts`: contact and social links
 - `src/app/layout.tsx`: search and sharing metadata
+- `public/photos/`: optimized, metadata-free WebP copies of user-supplied performance photos; originals are kept outside the repository
 
 The resume link and public PDF have been removed. Dispatchient (formerly Keyfortly Agent) links to its public marketing frontend at https://dispatchient.mistyfrog8.chatgpt.site. Its private repository is not linked.
 

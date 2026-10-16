@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
-import SmoothCursor from "@/components/SmoothCursor";
 import "./globals.css";
 
 const ibm = IBM_Plex_Sans({
@@ -13,7 +12,7 @@ const ibm = IBM_Plex_Sans({
 export const metadata: Metadata = {
   title: "Vishnu Subramani | AI Engineer",
   description:
-    "AI engineer building internal agents at Revvity, Keyfortly property-management SaaS, and Dispatchient AI maintenance coordination. University of Waterloo. Seeking a summer 2027 startup internship.",
+    "AI engineer building agents at Revvity, KeyFortly property-management SaaS, and Dispatchient AI maintenance coordination. University of Waterloo. Seeking a 2027 engineering internship at a startup.",
   keywords: [
     "Vishnu Subramani",
     "University of Waterloo",
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vishnu Subramani | AI Engineer",
     description:
-      "AI engineer at Waterloo. Building internal agents at Revvity, Keyfortly property-management SaaS, and Dispatchient AI maintenance coordination. Open to summer 2027 startup internships.",
+      "AI engineer at Waterloo. Building agents at Revvity, KeyFortly property-management SaaS, and Dispatchient AI maintenance coordination. Looking for a 2027 engineering internship at a startup.",
     url: "https://vishnus.online",
     siteName: "Vishnu Subramani",
     type: "website",
@@ -47,7 +46,6 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
       </head>
       <body className={`${ibm.className} min-h-screen`}>
-        <SmoothCursor />
         {children}
       </body>
     </html>
