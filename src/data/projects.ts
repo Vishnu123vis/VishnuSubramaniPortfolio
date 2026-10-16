@@ -14,7 +14,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "KeyFortly",
-    audience: "40 landlords · 5 businesses",
+    audience: "users: 40 landlords · 5 businesses",
     tagline: "End-to-end property management for Ontario landlords, from leases and rent to maintenance.",
     description: "Property-management SaaS built and operated end to end.",
     period: "Ongoing",
