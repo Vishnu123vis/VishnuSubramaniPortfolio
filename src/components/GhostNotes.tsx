@@ -32,7 +32,7 @@ export default function GhostNotes() {
   return (
     <div ref={entry} className="music-entry" data-open={open}
       onPointerEnter={(event) => { if (event.pointerType === "mouse") setOpen(true); }}
-      onPointerLeave={() => { if (!entry.current?.contains(document.activeElement)) setOpen(false); }}
+      onPointerLeave={() => setOpen(false)}
       onFocusCapture={(event) => { if (event.target.tagName === "A") setOpen(true); }}
       onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }}>
       <div className="music-summary">
