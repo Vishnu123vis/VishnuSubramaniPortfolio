@@ -67,7 +67,9 @@ export default function Home() {
               ai engineer building internal agents at{" "}
               <ExternalLink href="https://www.revvity.com/">revvity</ExternalLink>
               {" "}and property-management tools at{" "}
-              <ExternalLink href="https://keyfortly.com/">keyfortly</ExternalLink>.
+              <ExternalLink href="https://keyfortly.com/">keyfortly</ExternalLink>
+              {" "}and{" "}
+              <ExternalLink href="https://dispatchient.mistyfrog8.chatgpt.site">dispatchient</ExternalLink>.
             </p>
             <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
               looking for a <span className="text-fg">summer 2027 ai engineering internship</span>

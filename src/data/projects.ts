@@ -21,12 +21,13 @@ export const projects: Project[] = [
     live: "https://keyfortly.com/",
   },
   {
-    title: "Keyfortly Agent",
-    tagline: "turns tenant messages into maintenance cases, with manager approvals, human takeover, and an audit trail. in development",
-    description: "An AI operations assistant for property managers, currently in private development.",
+    title: "Dispatchient",
+    tagline: "formerly keyfortly agent. turns tenant texts and photos into maintenance cases, with policy-controlled coordination, human takeover, and an audit trail. in private testing",
+    description: "A standalone AI maintenance coordinator for landlords and property managers, currently in private synthetic testing.",
     period: "Ongoing",
     technologies: ["Next.js", "TypeScript", "OpenAI", "Twilio", "AWS CDK"],
-    features: ["Tenant message intake", "Approval-controlled follow-ups", "Operations dashboard"],
+    features: ["Tenant text and photo intake", "Policy-controlled coordination and human review", "Separate tenant and provider conversations", "Operations dashboard and audit trail"],
+    live: "https://dispatchient.mistyfrog8.chatgpt.site",
   },
   {
     title: "Findr",
