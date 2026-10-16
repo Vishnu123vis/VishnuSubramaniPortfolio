@@ -55,7 +55,7 @@ export default function Home() {
               hey, I&apos;m vishnu
             </h1>
             <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
-              management engineering @{" "}
+              engineering @{" "}
               <ExternalLink href={UW}>university of waterloo</ExternalLink>
               <span className="text-muted">
                 {" · "}
