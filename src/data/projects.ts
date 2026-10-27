@@ -29,7 +29,7 @@ export const projects: Project[] = [
     period: "Ongoing",
     technologies: ["Next.js", "TypeScript", "OpenAI", "Twilio", "AWS CDK"],
     features: ["Tenant text and photo intake", "Policy-controlled coordination and human review", "Separate tenant and provider conversations", "Operations dashboard and audit trail"],
-    live: "https://dispatchient.mistyfrog8.chatgpt.site",
+    live: "https://dispatchient.com",
   },
   {
     title: "Findr",

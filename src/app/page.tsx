@@ -69,7 +69,7 @@ export default function Home() {
             <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
               Founded <ExternalLink href="https://keyfortly.com/">KeyFortly</ExternalLink>.
               <br />
-              Building <ExternalLink href="https://dispatchient.mistyfrog8.chatgpt.site">Dispatchient</ExternalLink>.
+              Building <ExternalLink href="https://dispatchient.com">Dispatchient</ExternalLink>.
             </p>
             <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
               Looking for 2027 engineering internship at a startup.

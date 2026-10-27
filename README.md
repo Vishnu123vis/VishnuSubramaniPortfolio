@@ -28,7 +28,7 @@ Production files are generated in `out/`. Preview that directory with a static H
 - `src/app/layout.tsx`: search and sharing metadata
 - `public/photos/`: optimized, metadata-free WebP copies of user-supplied performance photos; originals are kept outside the repository
 
-The resume link and public PDF have been removed. Dispatchient (formerly Keyfortly Agent) links to its public marketing frontend at https://dispatchient.mistyfrog8.chatgpt.site. Its private repository is not linked.
+The resume link and public PDF have been removed. Dispatchient (formerly Keyfortly Agent) links to its public marketing frontend at https://dispatchient.com. Its private repository is not linked.
 
 ## Deployment
 
