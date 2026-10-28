@@ -33,8 +33,6 @@ export const metadata: Metadata = {
   },
 };
 
-const themeInit = `(function(){try{var t=localStorage.getItem('theme');if(t==='light'){return;}document.documentElement.classList.add('dark');}catch(e){document.documentElement.classList.add('dark');}})();`;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,9 +40,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${ibm.variable} scroll-smooth`}>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-      </head>
       <body className={`${ibm.className} min-h-screen`}>
         {children}
       </body>

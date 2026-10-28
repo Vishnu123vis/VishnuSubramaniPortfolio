@@ -1,18 +1,6 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 :root {
-  --bg: #ffffff;
-  --fg: #171717;
-  --body: #404040;
-  --muted: #737373;
-  --soft: #a3a3a3;
-  --line: #e5e5e5;
-  --line-soft: #efefef;
-}
-
-.dark {
   --bg: #0b0b0c;
   --fg: #f5f5f5;
   --body: #d4d4d4;
@@ -24,20 +12,13 @@
 
 @layer base {
   html {
-    color-scheme: light;
-    scroll-behavior: smooth;
-  }
-
-  html.dark {
     color-scheme: dark;
+    scroll-behavior: smooth;
   }
 
   body {
     background-color: var(--bg);
     color: var(--fg);
-    transition:
-      background-color 0.25s ease,
-      color 0.25s ease;
     @apply antialiased;
   }
 
@@ -120,30 +101,6 @@
     outline-offset: 2px;
   }
 
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: 40px;
-    border: 1px solid var(--line);
-    background-color: var(--bg);
-    color: var(--muted);
-    border-radius: 10px;
-    transition:
-      color 0.2s ease,
-      background-color 0.2s ease,
-      border-color 0.2s ease;
-  }
-  .chip:hover {
-    color: var(--fg);
-    border-color: var(--fg);
-  }
-  .chip:focus-visible {
-    outline: 2px solid var(--fg);
-    outline-offset: 2px;
-  }
-
   .list-arrow > li {
     border-left: 1px solid transparent;
     padding-left: 0;
@@ -211,3 +168,34 @@
 @media (hover: hover) and (pointer: fine) { .music-toggle { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } .music-toggle:focus-visible { position: static; width: auto; height: auto; clip-path: none; } }
 @media (max-width: 640px) { .photo-strip a { height: 135px; } }
 @media (prefers-reduced-motion: reduce) { .music-gallery { transition: none; transform: none; } }
+
+/* A single set of sketches: a quiet strip on small screens, margin notes on wide ones. */
+.portfolio-doodles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+  gap: 0.25rem 1rem;
+  color: var(--muted);
+  pointer-events: none;
+  user-select: none;
+}
+.portfolio-doodle { width: 3.5rem; height: 3.5rem; }
+.doodle-smile { transform: rotate(-12deg); }
+.doodle-sax { transform: rotate(9deg); }
+.doodle-notes { transform: rotate(-8deg); }
+.doodle-laptop { transform: rotate(-7deg); }
+.doodle-rocket { transform: rotate(8deg); }
+.doodle-cool-s { transform: rotate(11deg); }
+@media (min-width: 40em) {
+  .portfolio-doodles { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+@media (min-width: 68.75em) {
+  .portfolio-doodles { position: absolute; inset: 0; display: block; }
+  .portfolio-doodle { position: absolute; width: 5.5rem; height: 5.5rem; }
+  .doodle-smile { left: -7.25rem; top: 5%; }
+  .doodle-sax { right: -7.25rem; top: 36%; }
+  .doodle-notes { left: -6.5rem; top: 78%; width: 4.5rem; height: 4.5rem; }
+  .doodle-laptop { left: -7.25rem; top: 44%; }
+  .doodle-rocket { right: -7rem; top: 77%; width: 5rem; height: 5rem; }
+  .doodle-cool-s { right: -6.75rem; top: 9%; width: 4.5rem; height: 4.5rem; }
+}

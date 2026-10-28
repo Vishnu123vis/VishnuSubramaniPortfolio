@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import GhostNotes from "@/components/GhostNotes";
 import SocialLinks from "@/components/SocialLinks";
-import ThemeToggle from "@/components/ThemeToggle";
+import PortfolioDoodles from "@/components/PortfolioDoodles";
 import { education } from "@/data/education";
 import { experiences } from "@/data/experience";
 import { personalInfo } from "@/data/links";
@@ -36,18 +36,14 @@ const SECTION_HEAD =
 export default function Home() {
   return (
     <div className="min-h-svh px-6 py-7 sm:px-10 sm:py-9 lg:py-10">
-      <div className="fixed right-5 top-5 z-40 sm:right-7 sm:top-7">
-        <ThemeToggle />
-      </div>
-
-      <main className="mx-auto flex w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
+      <main className="relative mx-auto flex w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
         <header className="flex items-start gap-5 sm:gap-7">
           <Image
             src="/signature.png"
             alt=""
             width={1024}
             height={903}
-            className="h-auto w-[3.25rem] shrink-0 object-contain object-left dark:invert sm:w-[3.75rem] lg:w-[4.25rem]"
+            className="h-auto w-[3.25rem] shrink-0 invert object-contain object-left sm:w-[3.75rem] lg:w-[4.25rem]"
             priority
           />
           <div className="min-w-0 flex-1 space-y-1.5">
@@ -155,6 +151,8 @@ export default function Home() {
             ))}
           </dl>
         </section>
+
+        <PortfolioDoodles />
 
         <footer className="border-line-soft -mt-2 flex flex-col gap-3 border-t pt-3 sm:-mt-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-3.5">
           <p className="text-body text-[13.5px] leading-relaxed sm:text-[14px]">
