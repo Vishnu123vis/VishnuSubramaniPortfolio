@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import GhostNotes from "@/components/GhostNotes";
 import SocialLinks from "@/components/SocialLinks";
-import PortfolioDoodles from "@/components/PortfolioDoodles";
 import { education } from "@/data/education";
 import { experiences } from "@/data/experience";
 import { personalInfo } from "@/data/links";
@@ -36,28 +35,32 @@ const SECTION_HEAD =
 export default function Home() {
   return (
     <div className="min-h-svh px-6 py-7 sm:px-10 sm:py-9 lg:py-10">
-      <main className="relative mx-auto flex w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
-        <header className="flex items-start gap-5 sm:gap-7">
-          <Image
-            src="/signature.png"
-            alt=""
-            width={1024}
-            height={903}
-            className="h-auto w-[3.25rem] shrink-0 invert object-contain object-left sm:w-[3.75rem] lg:w-[4.25rem]"
-            priority
-          />
-          <div className="min-w-0 flex-1 space-y-1.5">
-            <h1 className="text-fg text-[1.5rem] font-medium leading-tight tracking-tight sm:text-[1.75rem] lg:text-[1.95rem]">
-              hey, I&apos;m vishnu
-            </h1>
-            <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
-              engineering @{" "}
-              <ExternalLink href={UW}>university of waterloo</ExternalLink>
-              <span className="text-muted">
-                {" · "}
-                {education.gpa}
-              </span>
-            </p>
+      <main className="mx-auto flex w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
+        <header className="space-y-3">
+          <div className="flex items-center justify-between gap-4 sm:gap-6">
+            <div className="min-w-0 flex-1 space-y-1.5">
+              <h1 className="text-fg text-[1.5rem] font-medium leading-tight tracking-tight sm:text-[1.75rem] lg:text-[1.95rem]">
+                hey, I&apos;m vishnu
+              </h1>
+              <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
+                engineering @{" "}
+                <ExternalLink href={UW}>university of waterloo</ExternalLink>
+                <span className="text-muted">
+                  {" · "}
+                  {education.gpa}
+                </span>
+              </p>
+            </div>
+            <Image
+              src="/signature.png"
+              alt=""
+              width={1024}
+              height={903}
+              className="h-auto w-16 shrink-0 invert object-contain sm:w-20"
+              priority
+            />
+          </div>
+          <div className="space-y-1.5">
             <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
               AI engineer building agents @{" "}
               <ExternalLink href="https://www.revvity.com/">Revvity</ExternalLink>.
@@ -151,8 +154,6 @@ export default function Home() {
             ))}
           </dl>
         </section>
-
-        <PortfolioDoodles />
 
         <footer className="border-line-soft -mt-2 flex flex-col gap-3 border-t pt-3 sm:-mt-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-3.5">
           <p className="text-body text-[13.5px] leading-relaxed sm:text-[14px]">

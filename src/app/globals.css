@@ -168,34 +168,3 @@
 @media (hover: hover) and (pointer: fine) { .music-toggle { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } .music-toggle:focus-visible { position: static; width: auto; height: auto; clip-path: none; } }
 @media (max-width: 640px) { .photo-strip a { height: 135px; } }
 @media (prefers-reduced-motion: reduce) { .music-gallery { transition: none; transform: none; } }
-
-/* A single set of sketches: a quiet strip on small screens, margin notes on wide ones. */
-.portfolio-doodles {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  justify-items: center;
-  gap: 0.25rem 1rem;
-  color: var(--muted);
-  pointer-events: none;
-  user-select: none;
-}
-.portfolio-doodle { width: 3.5rem; height: 3.5rem; }
-.doodle-smile { transform: rotate(-12deg); }
-.doodle-sax { transform: rotate(9deg); }
-.doodle-notes { transform: rotate(-8deg); }
-.doodle-laptop { transform: rotate(-7deg); }
-.doodle-rocket { transform: rotate(8deg); }
-.doodle-cool-s { transform: rotate(11deg); }
-@media (min-width: 40em) {
-  .portfolio-doodles { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-}
-@media (min-width: 68.75em) {
-  .portfolio-doodles { position: absolute; inset: 0; display: block; }
-  .portfolio-doodle { position: absolute; width: 5.5rem; height: 5.5rem; }
-  .doodle-smile { left: -7.25rem; top: 5%; }
-  .doodle-sax { right: -7.25rem; top: 36%; }
-  .doodle-notes { left: -6.5rem; top: 78%; width: 4.5rem; height: 4.5rem; }
-  .doodle-laptop { left: -7.25rem; top: 44%; }
-  .doodle-rocket { right: -7rem; top: 77%; width: 5rem; height: 5rem; }
-  .doodle-cool-s { right: -6.75rem; top: 9%; width: 4.5rem; height: 4.5rem; }
-}
