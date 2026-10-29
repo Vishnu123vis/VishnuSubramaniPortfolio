@@ -36,31 +36,27 @@ export default function Home() {
   return (
     <div className="min-h-svh px-6 py-7 sm:px-10 sm:py-9 lg:py-10">
       <main className="mx-auto flex w-full max-w-[44rem] flex-col gap-5 sm:gap-6 lg:gap-7">
-        <header className="space-y-3">
-          <div className="flex items-center justify-between gap-4 sm:gap-6">
-            <div className="min-w-0 flex-1 space-y-1.5">
-              <h1 className="text-fg text-[1.5rem] font-medium leading-tight tracking-tight sm:text-[1.75rem] lg:text-[1.95rem]">
-                hey, I&apos;m vishnu
-              </h1>
-              <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
-                engineering @{" "}
-                <ExternalLink href={UW}>university of waterloo</ExternalLink>
-                <span className="text-muted">
-                  {" · "}
-                  {education.gpa}
-                </span>
-              </p>
-            </div>
-            <Image
-              src="/signature.png"
-              alt=""
-              width={1024}
-              height={903}
-              className="h-auto w-16 shrink-0 invert object-contain sm:w-20"
-              priority
-            />
-          </div>
-          <div className="space-y-1.5">
+        <header className="flex items-start gap-4 sm:gap-6">
+          <Image
+            src="/signature.png"
+            alt=""
+            width={1024}
+            height={903}
+            className="h-auto w-14 shrink-0 invert object-contain object-left sm:w-16 lg:w-[4.5rem]"
+            priority
+          />
+          <div className="min-w-0 flex-1 space-y-1.5">
+            <h1 className="text-fg text-[1.5rem] font-medium leading-tight tracking-tight sm:text-[1.75rem] lg:text-[1.95rem]">
+              hey, I&apos;m vishnu
+            </h1>
+            <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
+              engineering @{" "}
+              <ExternalLink href={UW}>university of waterloo</ExternalLink>
+              <span className="text-muted">
+                {" · "}
+                {education.gpa}
+              </span>
+            </p>
             <p className="text-body text-[14px] leading-relaxed sm:text-[15px]">
               AI engineer building agents @{" "}
               <ExternalLink href="https://www.revvity.com/">Revvity</ExternalLink>.
